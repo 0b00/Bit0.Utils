@@ -3,9 +3,11 @@ Small utilites for .net core
 
 ## Utilities
 
-- Common (Bit0.Utils.Common)
-- JSend (Bit0.Utils.JSend)
-- JSend.Http (Bit0.Utils.JSend.Http)
-
+- [Common](/src/Common) (Bit0.Utils.Common)
+- [Common.Data](/src/Common.Data) (Bit0.Utils.Common.Data)
+- [Generators](/src/Generators) (Bit0.Utils.Generators)
+- [JSend](/src/JSend) (Bit0.Utils.JSend)
+- [JSend.Http](/src/JSend.Http) (Bit0.Utils.JSend.Http)
+	
 ## Installation
-[https://www.myget.org/F/bit0/api/v3/index.json](MyGet)
+[MyGet](https://www.myget.org/gallery/bit0)

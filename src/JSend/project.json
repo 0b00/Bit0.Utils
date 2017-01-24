@@ -4,7 +4,7 @@
   "version": "0.9.3-*",
   "authors": [ "b1thunt3r" ],
   "packOptions": {
-    "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE",
+    "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md",
     "projectUrl": "https://github.com/b1thunt3r/Bit0.Utils",
     "owners": [ "b1thunt3r", "Bit0" ]
   },
