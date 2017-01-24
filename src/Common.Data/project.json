@@ -1,19 +1,18 @@
 {
-  "name": "Bit0.Utils.Common",
-  "title": "Common Utils by Bit0",
-  "version": "0.7.2-*",
+  "name": "Bit0.Utils.Common.Data",
+  "title": "Data utils by Bit0",
+  "version": "0.9.1-*",
   "authors": [ "b1thunt3r" ],
   "packOptions": {
     "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE",
     "projectUrl": "https://github.com/b1thunt3r/Bit0.Utils",
     "owners": [ "b1thunt3r", "Bit0" ]
   },
-  "description": "Common utils for .net core by Bit0",
+  "description": "Data utils for .net core by Bit0",
 
   "dependencies": {
-    "NETStandard.Library": "1.6.0",
-    "Newtonsoft.Json": "9.0.1",
-    "System.Reflection.TypeExtensions": "4.1.0"
+    "Bit0.Utils.JSend": "0.9.3",
+    "NETStandard.Library": "1.6.0"
   },
   "frameworks": {
     "netstandard1.6": {
@@ -23,7 +22,7 @@
   "buildOptions": {
     "optimize": true,
     "xmlDoc": true,
-    "outputName": "Bit0.Utils.Common"
+    "outputName": "Bit0.Utils.Common.Data"
   },
   "scripts": {
     "postcompile": [

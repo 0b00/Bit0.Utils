@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Bit0.Utils.Common.Extensions
+namespace Bit0.Utils.Extensions
 {
     /// <summary>
     /// Enum extensions

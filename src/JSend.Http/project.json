@@ -1,19 +1,19 @@
-{
-  "name": "Bit0.Utils.Common",
-  "title": "Common Utils by Bit0",
-  "version": "0.7.2-*",
+﻿{
+  "name": "Bit0.Utils.JSend.Http",
+  "title": "JSend for HTTO by Bit0",
+  "version": "0.8.0-*",
   "authors": [ "b1thunt3r" ],
   "packOptions": {
     "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE",
     "projectUrl": "https://github.com/b1thunt3r/Bit0.Utils",
     "owners": [ "b1thunt3r", "Bit0" ]
   },
-  "description": "Common utils for .net core by Bit0",
+  "description": "JSend for Http for .net core by Bit0",
 
   "dependencies": {
+    "Bit0.Utils.JSend": "0.9.2",
     "NETStandard.Library": "1.6.0",
-    "Newtonsoft.Json": "9.0.1",
-    "System.Reflection.TypeExtensions": "4.1.0"
+    "Newtonsoft.Json": "9.0.1"
   },
   "frameworks": {
     "netstandard1.6": {
@@ -21,9 +21,9 @@
     }
   },
   "buildOptions": {
-    "optimize": true,
     "xmlDoc": true,
-    "outputName": "Bit0.Utils.Common"
+    "optimize": true,
+    "outputName": "Bit0.Utils.JSend.Http"
   },
   "scripts": {
     "postcompile": [

@@ -1,4 +1,4 @@
-﻿using Bit0.Utils.Extensions;
+﻿using Bit0.Utils.Common.Extensions;
 using Bit0.Utils.JSend.Common;
 using Newtonsoft.Json;
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Bit0.Utils.Common.Attributes
+namespace Bit0.Utils.Attributes
 {
     /// <summary>
     /// Add string meta data to <see cref="Enum"/> fields.

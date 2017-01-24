@@ -1,7 +1,7 @@
 ﻿using System;
-using Bit0.Utils.Common.Attributes;
+using Bit0.Utils.Attributes;
 
-namespace Bit0.Utils.Common.Extensions
+namespace Bit0.Utils.Extensions
 {
     /// <summary>
     /// String extensions
