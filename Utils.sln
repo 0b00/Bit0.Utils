@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "JSend", "src\JSend\JSend.xproj", "{29371E8A-FE83-41C4-9A4C-E64E933CD36F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Common", "src\Common\Common.xproj", "{A3D3FE64-9CA1-409A-B185-8733E64CAFBD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Utils", "src\Utils\Utils.xproj", "{A3D3FE64-9CA1-409A-B185-8733E64CAFBD}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "JSend", "src\JSend\JSend.xproj", "{29371E8A-FE83-41C4-9A4C-E64E933CD36F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
