@@ -8,16 +8,14 @@ namespace Bit0.Utils.JSend.Responses
     public class SuccessResponse : JSendResponse
     {
         /// <summary>
-        /// JSend status
-        /// </summary>
-        protected override JSendStatus Status => JSendStatus.Success;
-
-        /// <summary>
         /// JSend success response
         /// </summary>
         /// <param name="data">Payload</param>
-        public SuccessResponse(object data)
+        /// <param name="code">Http status code</param>
+        /// <param name="internalCode">Internal application code</param>
+        public SuccessResponse(object data, int code = 200, int internalCode = 200)
         {
+            StatusCode = new JSendStatusCode(code, internalCode);
             Data = data;
         }
     }
