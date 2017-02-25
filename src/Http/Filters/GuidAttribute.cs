@@ -36,7 +36,7 @@ namespace Bit0.Utils.Http.Filters
 
             return !_hasList
                 ? Guid.TryParse(value.ToString(), out guid)
-                : ((List<string>)value).Aggregate(true, (current, str) => current && Guid.TryParse(str, out guid));
+                : ((IEnumerable<string>)value).Aggregate(true, (current, str) => current && Guid.TryParse(str, out guid));
         }
 
         //protected override ValidationResult IsValid(object value, ValidationContext validationContext)
