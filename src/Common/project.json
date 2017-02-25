@@ -1,7 +1,7 @@
 {
   "name": "Bit0.Utils.Common",
   "title": "Common Utils by Bit0",
-  "version": "0.8.0-*",
+  "version": "0.8.5-*",
   "authors": [ "b1thunt3r" ],
   "packOptions": {
     "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md",
