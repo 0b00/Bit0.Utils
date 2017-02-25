@@ -1,0 +1,43 @@
+﻿{
+  "name": "Bit0.Utils.Tests",
+  "title": "Tests for Common Utils by Bit0",
+  "version": "0.8.0-*",
+  "authors": [ "b1thunt3r" ],
+  "packOptions": {
+    "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md",
+    "projectUrl": "https://github.com/b1thunt3r/Bit0.Utils",
+    "owners": [ "b1thunt3r", "Bit0" ]
+  },
+  "description": "Tests for Common utils for .net core by Bit0",
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "xunit": "2.2.0-beta3-build3402",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "Bit0.Utils.Common": "0.8.0",
+    "Bit0.Utils.Common.Data": "0.9.1",
+    "Bit0.Utils.Generators": "1.0.1",
+    "Bit0.Utils.Http": "0.6.0",
+    "Bit0.Utils.JSend": "1.0.0",
+    "Bit0.Utils.JSend.Http": "0.8.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": "dnxcore50"
+    }
+  },
+
+  "testRunner": "xunit",
+
+  "buildOptions": {
+    "debugType": "portable",
+    "outputName": "Bit0.Utils.Tests"
+  },
+
+
+  "runtimes": {
+    "win10-x64": {},
+    "win10-x86": {}
+  }
+}
