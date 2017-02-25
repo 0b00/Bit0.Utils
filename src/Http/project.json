@@ -1,7 +1,7 @@
 ﻿{
   "name": "Bit0.Utils.Http",
   "title": "Http utils by Bit0",
-  "version": "0.6.0-*",
+  "version": "0.6.1-*",
   "authors": [ "b1thunt3r" ],
   "packOptions": {
     "licenseUrl": "https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md",
