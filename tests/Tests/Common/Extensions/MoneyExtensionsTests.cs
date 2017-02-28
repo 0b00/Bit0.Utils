@@ -2,14 +2,14 @@
 using Bit0.Utils.Common.Extensions;
 using Xunit;
 
-namespace Bit0.Utils.Tests.Extensions
+namespace Bit0.Utils.Tests.Common.Extensions
 {
-    public class MoneyTests
+    public class MoneyExtensionsTests
     {
         private Money _m1;
         private Money _m2;
 
-        public MoneyTests()
+        public MoneyExtensionsTests()
         {
             _m1 = new Money
             {

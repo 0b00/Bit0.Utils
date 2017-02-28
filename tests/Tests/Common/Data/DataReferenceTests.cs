@@ -2,9 +2,9 @@
 using Bit0.Utils.Common.Data;
 using Xunit;
 
-namespace Bit0.Utils.Tests.Data
+namespace Bit0.Utils.Tests.Common.Data
 {
-    public class IdentityTests
+    public class DataReferenceTests
     {
         [Fact]
         public void ImplicitFromString()

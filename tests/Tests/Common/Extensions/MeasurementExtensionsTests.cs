@@ -2,9 +2,9 @@
 using Bit0.Utils.Common.Extensions;
 using Xunit;
 
-namespace Bit0.Utils.Tests.Extensions
+namespace Bit0.Utils.Tests.Common.Extensions
 {
-    public class MeasurementTests
+    public class MeasurementExtensionsTests
     {
         [Fact]
         public void NormalizedValueTest1()
