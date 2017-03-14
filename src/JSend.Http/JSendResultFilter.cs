@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace JSend.Http
+namespace Bit0.Utils.JSend.Http
 {
     /// <summary>
     /// JSend result filter
