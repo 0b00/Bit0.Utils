@@ -9,6 +9,7 @@ Small utilites for .net core
 - [Http](/src/Http) (Bit0.Utils.Http)
 - [JSend](/src/JSend) (Bit0.Utils.JSend)
 - [JSend.Http](/src/JSend.Http) (Bit0.Utils.JSend.Http)
+- [Security](/src/Security) (Bit0.Utils.Security)
 	
 ## Installation
 [MyGet](https://www.myget.org/gallery/bit0)
