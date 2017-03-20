@@ -7,7 +7,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Bit0.Utils.JSend</AssemblyName>
-    <PackageId>JSend</PackageId>
+    <PackageId>Bit0.Utils.JSend</PackageId>
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
     <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
@@ -16,11 +16,12 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.JSend</RootNamespace>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bit0.Utils.Common" Version="0.8.6" />
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
   </ItemGroup>
 
   <Target Name="PostcompileScript" AfterTargets="Build">
