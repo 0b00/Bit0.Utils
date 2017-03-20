@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Security utils for .net core by Bit0</Description>
+    <AssemblyTitle>Security utils by Bit0</AssemblyTitle>
+    <VersionPrefix>0.1.1</VersionPrefix>
+    <Authors>b1thunt3r</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Bit0.Utils.Security</AssemblyName>
+    <PackageId>Bit0.Utils.Security</PackageId>
+    <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Bit0.Utils.Security</RootNamespace>
+    <Version>0.2.1</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyVersion>0.2.1.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bit0.Utils.Common" Version="0.8.6" />
+    <PackageReference Include="jwt.dotnetstandard.json-net" Version="0.0.1" />
+  </ItemGroup>
+
+  <Target Name="PostcompileScript" AfterTargets="Build">
+    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  </Target>
+
+</Project>

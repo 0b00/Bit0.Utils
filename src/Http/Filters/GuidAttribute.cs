@@ -32,10 +32,9 @@ namespace Bit0.Utils.Http.Filters
         /// <returns></returns>
         public override bool IsValid(object value)
         {
-            Guid guid;
 
             return !_hasList
-                ? Guid.TryParse(value.ToString(), out guid)
+                ? Guid.TryParse(value.ToString(), out Guid guid)
                 : ((IEnumerable<string>)value).Aggregate(true, (current, str) => current && Guid.TryParse(str, out guid));
         }
 

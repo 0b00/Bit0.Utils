@@ -1,6 +1,8 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
+﻿using System;
+using System.Collections.Generic;
+using JWT;
+using JWT.DNX.Json.Net;
+using Bit0.Utils.Common.Extensions;
 
 namespace Bit0.Utils.Security.Jwt
 {
@@ -10,47 +12,43 @@ namespace Bit0.Utils.Security.Jwt
     public class JwtToken
     {
         /// <summary>
-        /// Generate new token
+        /// Creating Tokens
         /// </summary>
-        /// <param name="claimsIdentity">Claims in the token</param>
-        /// <param name="signingKey">Key</param>
+        /// <param name="payload"></param>
+        /// <param name="secretKey"></param>
+        /// <param name="expires"></param>
+        /// <param name="algorithm"></param>
         /// <returns></returns>
-        public static string Generate(ClaimsIdentity claimsIdentity, SecurityKey signingKey)
+        public static string Generate(IDictionary<string, object> payload, string secretKey, DateTime? expires = null, JwtHashAlgorithm algorithm = JwtHashAlgorithm.HS512)
         {
-            var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature);
+            JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
 
-            var securityTokenDescriptor = new SecurityTokenDescriptor()
+            if (expires.HasValue)
             {
-                Subject = claimsIdentity,
-                SigningCredentials = signingCredentials
-            };
+                payload.Add("exp", expires.Value.ToUnixEpoch());
+            }
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var plainToken = tokenHandler.CreateToken(securityTokenDescriptor);
-            var signedAndEncodedToken = tokenHandler.WriteToken(plainToken);
+            payload.Add("iat", DateTime.Now.ToUnixEpoch());
+            payload.Add("nbf", DateTime.Now.ToUnixEpoch());
 
-            return signedAndEncodedToken;
+            var token = JsonWebToken.Encode(payload, secretKey, algorithm);
+            return token;
         }
 
         /// <summary>
-        /// Validate a JWT token
+        /// Verifying and Decoding Tokens
         /// </summary>
-        /// <param name="signedAndEncodedToken">TOken</param>
-        /// <param name="signingKey">Key</param>
+        /// <param name="token"></param>
+        /// <param name="secretKey"></param>
         /// <returns></returns>
-        public SecurityToken Validate(string signedAndEncodedToken, SecurityKey signingKey)
+        public IDictionary<string, object> Validate(string token, string secretKey)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
+            JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
 
-            var tokenValidationParameters = new TokenValidationParameters()
-            {
-                IssuerSigningKey = signingKey
-            };
-
-            SecurityToken validatedToken;
-            tokenHandler.ValidateToken(signedAndEncodedToken, tokenValidationParameters, out validatedToken);
-
-            return validatedToken;
+            var payload = JsonWebToken.DecodeToObject(token, secretKey) as IDictionary<string, object>;
+            return payload;
         }
+
+        
     }
 }

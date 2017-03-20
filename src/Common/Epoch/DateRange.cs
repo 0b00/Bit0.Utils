@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bit0.Utils.Common
+namespace Bit0.Utils.Common.Epoch
 {
     /// <summary>
     /// Date range
