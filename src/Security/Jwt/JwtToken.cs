@@ -16,16 +16,16 @@ namespace Bit0.Utils.Security.Jwt
         /// </summary>
         /// <param name="payload"></param>
         /// <param name="secretKey"></param>
-        /// <param name="expires"></param>
+        /// <param name="expiresinSeconds"></param>
         /// <param name="algorithm"></param>
         /// <returns></returns>
-        public static string Generate(IDictionary<string, object> payload, string secretKey, DateTime? expires = null, JwtHashAlgorithm algorithm = JwtHashAlgorithm.HS512)
+        public static string Generate(IDictionary<string, object> payload, string secretKey, int? expiresinSeconds = null, JwtHashAlgorithm algorithm = JwtHashAlgorithm.HS512)
         {
             JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
 
-            if (expires.HasValue)
+            if (expiresinSeconds.HasValue)
             {
-                payload.Add("exp", expires.Value.ToUnixEpoch());
+                payload.Add("exp", DateTime.Now.AddSeconds(expiresinSeconds.Value).ToUnixEpoch());
             }
 
             payload.Add("iat", DateTime.Now.ToUnixEpoch());
@@ -41,7 +41,7 @@ namespace Bit0.Utils.Security.Jwt
         /// <param name="token"></param>
         /// <param name="secretKey"></param>
         /// <returns></returns>
-        public IDictionary<string, object> Validate(string token, string secretKey)
+        public static IDictionary<string, object> Validate(string token, string secretKey)
         {
             JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
 
