@@ -15,7 +15,7 @@ namespace Bit0.Utils.Common.Extensions
         public static double ToUnixEpoch(this DateTime dateTime)
         {
             var unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return Math.Round((dateTime - unixEpoch).TotalSeconds);
+            return Math.Round((dateTime.ToUniversalTime() - unixEpoch).TotalSeconds);
         }
 
         /// <summary>
