@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using JWT;
-using JWT.DNX.Json.Net;
 using Bit0.Utils.Common.Extensions;
+using Jose;
 
 namespace Bit0.Utils.Security.Jwt
 {
     /// <summary>
     /// JSON Web Token
     /// </summary>
-    public class JwtToken
+    public class JwtConvert
     {
         /// <summary>
         /// Creating Tokens
@@ -19,9 +18,9 @@ namespace Bit0.Utils.Security.Jwt
         /// <param name="expiresinSeconds"></param>
         /// <param name="algorithm"></param>
         /// <returns></returns>
-        public static string Generate(IDictionary<string, object> payload, string secretKey, int? expiresinSeconds = null, JwtHashAlgorithm algorithm = JwtHashAlgorithm.HS512)
+        public static string Generate(IDictionary<string, object> payload, string secretKey, int? expiresinSeconds = null, JwsAlgorithm algorithm = JwsAlgorithm.HS512)
         {
-            JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
+            //JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
 
             if (expiresinSeconds.HasValue)
             {
@@ -31,7 +30,7 @@ namespace Bit0.Utils.Security.Jwt
             payload.Add("iat", DateTime.Now.ToUnixEpoch());
             payload.Add("nbf", DateTime.Now.ToUnixEpoch());
 
-            var token = JsonWebToken.Encode(payload, secretKey, algorithm);
+            var token = Jose.JWT.Encode(payload, secretKey, algorithm);
             return token;
         }
 
@@ -43,9 +42,9 @@ namespace Bit0.Utils.Security.Jwt
         /// <returns></returns>
         public static IDictionary<string, object> Validate(string token, string secretKey)
         {
-            JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
+            //JsonWebToken.JsonSerializer = new JsonNetJWTSerializer();
 
-            var payload = JsonWebToken.DecodeToObject(token, secretKey) as IDictionary<string, object>;
+            var payload = Jose.JWT.Decode<IDictionary<string, object>>(token, secretKey);
             return payload;
         }
 
