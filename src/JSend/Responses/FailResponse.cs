@@ -13,11 +13,19 @@ namespace Bit0.Utils.JSend.Responses
         /// <param name="data">Payload</param>
         /// <param name="code">Http status code</param>
         /// <param name="internalCode">Internal application code</param>
-        public FailResponse(object data, int code = 400, int internalCode = 400)
+        public FailResponse(object data, int code, int internalCode)
         {
             Status = JSendStatus.Fail;
             StatusCode = new JSendStatusCode(code, internalCode);
             Data = data;
         }
+
+        /// <summary>
+        /// JSend fail response
+        /// </summary>
+        /// <param name="data">Payload</param>
+        public FailResponse(object data)
+            : this(data, 400, 400)
+        { }
     }
 }

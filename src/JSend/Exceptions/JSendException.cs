@@ -26,7 +26,7 @@ namespace Bit0.Utils.JSend.Exceptions
         protected JSendException(object data, int status = 400, Exception inner = null) : base("JSONFail", inner)
         {
             StatusCode = status;
-            ResponseObject = new FailResponse(data);
+            ResponseObject = new FailResponse(data, status, status);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Bit0.Utils.JSend.Exceptions
         protected JSendException(string message, int status = 500, Exception inner = null) : base($"JSONError: {message}", inner)
         {
             StatusCode = status;
-            ResponseObject = new ErrorResponse(message);
+            ResponseObject = new ErrorResponse(message, status, status);
         }
     }
 }

@@ -16,7 +16,7 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.JSend</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace Bit0.Utils.JSend.Http
         {
             base.OnResultExecuting(context);
 
-            if (context.Controller is IJSendController) // TODO: Use an interface in future
+            if (context.Controller is IJSendController)
             {
                 context.Result = new OkObjectResult(new SuccessResponse(((ObjectResult)context.Result).Value));
             }
