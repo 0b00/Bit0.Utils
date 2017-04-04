@@ -30,7 +30,7 @@ namespace Bit0.Utils.Common.Epoch
         /// <param name="end">End date</param>
         public DateRange(DateTime start, DateTime end)
         {
-            // TODO: exception if end < start
+            //todo exception if end < start
             Start = start;
             End = end;
         }

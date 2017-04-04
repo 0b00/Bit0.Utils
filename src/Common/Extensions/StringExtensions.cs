@@ -37,5 +37,19 @@ namespace Bit0.Utils.Common.Extensions
                 list.Any(s => s.Equals(value, StringComparison.OrdinalIgnoreCase)) :
                 list.Contains(value);
         }
+
+        /// <summary>
+        /// Convert Pascal to Camel case
+        /// </summary>
+        /// <param name="str">Pascal case</param>
+        /// <param name="invariant"></param>
+        /// <returns></returns>
+        public static string ToCamelCase(this string str, bool invariant = true)
+        {
+            var chr = invariant ? char.ToLowerInvariant(str[0]) : char.ToLower(str[0]);
+            str = chr + str.Substring(1, str.Length - 1);
+
+            return str;
+        }
     }
 }
