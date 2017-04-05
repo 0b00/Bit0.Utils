@@ -8,6 +8,8 @@ namespace Bit0.Utils.Common.Data
     public class DataReference : IEquatable<DataReference>
     {
 
+        private const string _guidFormat = "D";
+
         /// <summary>
         /// String representation of Id
         /// </summary>
@@ -100,7 +102,7 @@ namespace Bit0.Utils.Common.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return ToString("D");
+            return ToString(_guidFormat);
         }
 
         /// <summary>
@@ -110,7 +112,10 @@ namespace Bit0.Utils.Common.Data
         /// <returns>true - if null or empty</returns>
         public static bool IsEmptyOrNull(DataReference id)
         {
-            return !(id?.Id != null && id.Id != Guid.Empty);
+            if (id == null)
+                return true;
+
+            return !(!string.IsNullOrWhiteSpace(id) && id.Id != Guid.Empty);
         }
 
         /// <summary>
@@ -171,7 +176,6 @@ namespace Bit0.Utils.Common.Data
         /// <returns></returns>
         public override int GetHashCode()
         {
-            // ReSharper disable once NonReadonlyMemberInGetHashCode
             return Id.GetHashCode();
         }
     }

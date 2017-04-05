@@ -24,12 +24,11 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0-preview-20170106-08" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0-beta5-build1225" />
     <PackageReference Include="xunit" Version="2.2.0-beta5-build3474" />
-    <PackageReference Include="Bit0.Utils.Common" Version="0.8.0" />
-    <PackageReference Include="Bit0.Utils.Common.Data" Version="0.9.1" />
-    <PackageReference Include="Bit0.Utils.Generators" Version="1.0.1" />
-    <PackageReference Include="Bit0.Utils.Http" Version="0.6.0" />
-    <PackageReference Include="Bit0.Utils.JSend" Version="1.0.0" />
-    <PackageReference Include="Bit0.Utils.JSend.Http" Version="0.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Common.Data\Common.Data.csproj" />
+    <ProjectReference Include="..\..\src\Common\Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
