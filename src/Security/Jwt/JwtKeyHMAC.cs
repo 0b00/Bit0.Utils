@@ -7,7 +7,7 @@ namespace Bit0.Utils.Security.Jwt
 
     public class JwtKeyHMAC : IJwtKey
     {
-        public JwsAlgorithm Algorithm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public JwsAlgorithm Algorithm { get; set; } = JwsAlgorithm.HS512;
 
         public object Key => SecretKey;
 
