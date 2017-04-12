@@ -8,7 +8,6 @@ namespace Bit0.Utils.Security.Jwt
     {
         public const string Audience = "aud";
         public const string Issuers = "iss";
-        public const string Subject = "sub";
 
         public const string Expiry = "exp";
         public const string IssuedAt = "iat";
