@@ -1,18 +1,14 @@
-﻿using System.Collections.Generic;
-
-namespace Bit0.Utils.Security.Jwt
+﻿namespace Bit0.Utils.Security.Jwt
 {
-    public abstract class JsonWebToken : IJwt
+    public abstract class JsonWebToken : JsonWebTokenBase
     {
-        public abstract IDictionary<string, object> Claims { get; }
+        public override string Issuer => (string)Claims["iss"];
+        public override string Subject => (string)Claims["sub"];
+        public override string Audience => (string)Claims["aud"];
 
-        public double Expiry => (double)Claims["exp"];
-        public double IssuedAt => (double)Claims["iat"];
-        public double NotBefore => (double)Claims["nbf"];
-
-        public string Issuer => (string)Claims["iss"];
-        public string Subject => (string)Claims["sub"];
-        public string Audience => (string)Claims["aud"];
-
+        public JsonWebToken(int expiresinSeconds = 1800, int notBeforeSeconds = 0)
+            : base(expiresinSeconds, notBeforeSeconds)
+        { }
     }
+
 }

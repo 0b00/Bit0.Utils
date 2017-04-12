@@ -7,7 +7,7 @@ namespace Bit0.Utils.Security.Jwt
 {
     public static class JwtWrapper
     {
-        public static string Generate(IDictionary<string, object> payload, IJwtKey jwtKey, int? expiresinSeconds = null)
+        public static string Generate(IDictionary<string, object> payload, IJwtKey jwtKey)
         {
             var token = Jose.JWT.Encode(payload, jwtKey.Key, jwtKey.Algorithm);
             return token;
