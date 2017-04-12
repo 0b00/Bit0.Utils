@@ -11,7 +11,6 @@ namespace Bit0.Utils.Security.Jwt
         double NotBefore { get; }
 
         string Issuer { get; }
-        string Subject { get; }
         string Audience { get; }
 
     }

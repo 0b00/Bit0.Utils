@@ -14,7 +14,6 @@ namespace Bit0.Utils.Security.Jwt
         public virtual double NotBefore => (double)Claims[JwtClaimKeys.NotBefore];
 
         public virtual string Issuer => throw new NotImplementedException($"{nameof(Issuer)} not implemented in Jwt.");
-        public virtual string Subject => throw new NotImplementedException($"{nameof(Subject)} not implemented in Jwt.");
         public virtual string Audience => throw new NotImplementedException($"{nameof(Audience)} not implemented in Jwt.");
 
         public JsonWebTokenBase(int expiresinSeconds = 1800, int notBeforeSeconds = 0)
