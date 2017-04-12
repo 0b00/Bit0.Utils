@@ -38,7 +38,7 @@ namespace Bit0.Utils.JSend.Exceptions
         protected JSendException(string message, int status = 500, Exception inner = null) : base($"JSONError: {message}", inner)
         {
             StatusCode = status;
-            ResponseObject = new ErrorResponse(message, status, status);
+            ResponseObject = new ErrorResponse(message, status, status, inner);
         }
     }
 }

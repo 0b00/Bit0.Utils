@@ -22,7 +22,7 @@ namespace Bit0.Utils.Http.Filters
         {
             _hasList = hasList;
 
-            ErrorMessage = "The {0} field is not a valid Guid.";
+            ErrorMessage = _hasList ? "The {0} field does not contains a valid Guid list." : "The {0} field is not a valid Guid.";
         }
 
         /// <summary>
@@ -32,6 +32,8 @@ namespace Bit0.Utils.Http.Filters
         /// <returns></returns>
         public override bool IsValid(object value)
         {
+
+            if (value == null) return false;
 
             return !_hasList
                 ? Guid.TryParse(value.ToString(), out Guid guid)

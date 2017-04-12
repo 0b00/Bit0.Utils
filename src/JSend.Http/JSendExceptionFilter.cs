@@ -47,7 +47,7 @@ namespace Bit0.Utils.JSend.Http
             }
             else
             {
-                var jsend = new ErrorResponse(context.Exception.Message);
+                var jsend = new ErrorResponse(context.Exception.Message, context.Exception);
                 jsonResult = new JsonResult(jsend)
                 {
                     StatusCode = StatusCodes.Status500InternalServerError
