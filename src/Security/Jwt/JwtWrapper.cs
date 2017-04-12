@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Bit0.Utils.Common.Extensions;
-using Bit0.Utils.JSend.Exceptions;
+﻿using System.Collections.Generic;
 
 namespace Bit0.Utils.Security.Jwt
 {
@@ -16,23 +13,17 @@ namespace Bit0.Utils.Security.Jwt
         public static IDictionary<string, object> Validate(string token, IJwtKey jwtKey)
         {
             var jwt = Jose.JWT.Decode<IDictionary<string, object>>(token, jwtKey.Key);
-
-            if (double.TryParse(jwt["exp"] as string, out double exp))
-            {
-                throw new InvalidCredentialsException(new { message = "Invalid access token." });
-            }
-
-            if (exp.ToUtc() <= DateTime.UtcNow)
-            {
-                throw new InvalidCredentialsException(new { message = "Access token has expired." });
-            }
+            jwt.ValidateDate(JwtClaimKeys.Expiry, "Access token has expired.");
+            jwt.ValidateDate(JwtClaimKeys.IssuedAt, "Invalid access token.");
+            jwt.ValidateDate(JwtClaimKeys.NotBefore, "Invalid access token, cannot use before {0}.");
 
             return jwt;
         }
-
+        
         public static IDictionary<string, object> Payload(string token)
         {
             return Jose.JWT.Payload<IDictionary<string, object>>(token);
         }
+
     }
 }
