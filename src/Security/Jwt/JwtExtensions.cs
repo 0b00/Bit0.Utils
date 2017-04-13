@@ -10,8 +10,18 @@ namespace Bit0.Utils.Security.Jwt
     {
         public static void ValidateDate(this IDictionary<string, object> jwt, string key, string errorMessage)
         {
-            
-            if (double.TryParse(jwt[key] as string, out double epoch))
+
+            double epoch;
+            try
+            {
+                epoch = (double)jwt[key];
+            }
+            catch (InvalidCastException ex)
+            {
+                throw new InvalidCredentialsException(new { message = "Invalid access token." }, ex);
+            }
+
+            if (epoch == 0)
             {
                 throw new InvalidCredentialsException(new { message = "Invalid access token." });
             }
