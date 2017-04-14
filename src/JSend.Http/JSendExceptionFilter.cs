@@ -37,9 +37,8 @@ namespace Bit0.Utils.JSend.Http
         {
             JsonResult jsonResult;
 
-            if (context.Exception is JSendException)
+            if (context.Exception is JSendException exception)
             {
-                var exception = (JSendException) context.Exception;
                 jsonResult = new JsonResult(exception.ResponseObject)
                 {
                     StatusCode = exception.StatusCode
