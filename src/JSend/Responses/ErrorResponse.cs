@@ -18,7 +18,8 @@ namespace Bit0.Utils.JSend.Responses
         /// <summary>
         /// Exception stack
         /// </summary>
-        public string StackTrace => Exception.StackTrace;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string StackTrace => Exception?.StackTrace;
 
         /// <summary>
         /// JSend error response
