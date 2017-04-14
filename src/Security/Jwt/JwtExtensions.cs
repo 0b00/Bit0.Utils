@@ -5,9 +5,17 @@ using Bit0.Utils.JSend.Exceptions;
 
 namespace Bit0.Utils.Security.Jwt
 {
-
+    /// <summary>
+    /// Extensions for Jwt
+    /// </summary>
     public static class JwtExtensions
     {
+        /// <summary>
+        /// Validate 
+        /// </summary>
+        /// <param name="jwt"></param>
+        /// <param name="key"></param>
+        /// <param name="errorMessage"></param>
         public static void ValidateDate(this IDictionary<string, object> jwt, string key, string errorMessage)
         {
 
@@ -21,7 +29,7 @@ namespace Bit0.Utils.Security.Jwt
                 throw new InvalidCredentialsException(new { message = "Invalid access token." }, ex);
             }
 
-            if (epoch == 0)
+            if (Math.Abs(epoch) <= 0)
             {
                 throw new InvalidCredentialsException(new { message = "Invalid access token." });
             }
