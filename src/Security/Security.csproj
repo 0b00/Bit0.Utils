@@ -11,21 +11,21 @@
     <PackageId>Bit0.Utils.Security</PackageId>
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.Security</RootNamespace>
-    <Version>0.5.8</Version>
+    <Version>0.5.9</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>0.5.8.0</AssemblyVersion>
-    <FileVersion>0.5.8.0</FileVersion>
+    <AssemblyVersion>0.5.9.0</AssemblyVersion>
+    <FileVersion>0.5.9.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Common" Version="0.8.9" />
-    <PackageReference Include="Bit0.Utils.JSend" Version="1.0.9" />
+    <PackageReference Include="Bit0.Utils.Common" Version="0.8.10" />
+    <PackageReference Include="Bit0.Utils.JSend" Version="1.0.11" />
     <PackageReference Include="jose-jwt" Version="2.2.0" />
     <PackageReference Include="jwt.dotnetstandard.json-net" Version="0.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />

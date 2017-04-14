@@ -11,16 +11,16 @@
     <PackageId>Bit0.Utils.Common</PackageId>
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.Common</RootNamespace>
-    <Version>0.8.9</Version>
-    <AssemblyVersion>0.8.9.0</AssemblyVersion>
+    <Version>0.8.10</Version>
+    <AssemblyVersion>0.8.10.0</AssemblyVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>0.8.9.0</FileVersion>
+    <FileVersion>0.8.10.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
