@@ -1,4 +1,6 @@
-﻿// ReSharper disable once CheckNamespace
+﻿using System;
+
+// ReSharper disable once CheckNamespace
 namespace Bit0.Utils.Common
 {
     /// <summary>
@@ -10,5 +12,15 @@ namespace Bit0.Utils.Common
         /// <see cref="IData"/> Id
         /// </summary>
         string Id { get; set; }
+
+        /// <summary>
+        /// Created timestamp
+        /// </summary>
+        DateTime CreatedOn { get; set; }
+
+        /// <summary>
+        /// Updated timestamp
+        /// </summary>
+        DateTime UpdatedOn { get; set; }
     }
 }
