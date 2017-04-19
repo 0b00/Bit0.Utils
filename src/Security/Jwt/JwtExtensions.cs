@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.Common.Extensions;
-using Bit0.Utils.JSend.Exceptions;
 
 namespace Bit0.Utils.Security.Jwt
 {
