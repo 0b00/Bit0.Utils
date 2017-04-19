@@ -1,12 +1,12 @@
 ﻿using System;
-using Bit0.Utils.JSend.Exceptions;
+using Bit0.Utils.Common.Exceptions;
 
 namespace Bit0.Utils.Http.Exceptions
 {
     /// <summary>
     /// Url Not Found Exception
     /// </summary>
-    public class UrlNotFoundException : JSendException
+    public class UrlNotFoundException : ExceptionBase
     {
         /// <summary>
         /// Url Not Found Exception
