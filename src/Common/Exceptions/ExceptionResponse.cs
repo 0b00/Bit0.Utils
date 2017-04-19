@@ -12,7 +12,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <summary>
         /// Exception status
         /// </summary>
-        public int Status { get; }
+        public int StatusCode { get; }
 
         /// <summary>
         /// Inner status
@@ -32,7 +32,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <summary>
         /// Inner Exception
         /// </summary>
-        public IEnumerable<string> StackTrace { get; }
+        public Exception InnerException { get; }
 
         /// <summary>
         /// Error response
@@ -62,13 +62,14 @@ namespace Bit0.Utils.Common.Exceptions
 
         private ExceptionResponse(int status, int innerStatus, Exception inner)
         {
-            Status = status;
+            StatusCode = status;
             InnerStatus = innerStatus;
+            InnerException = inner;
 
-            if (inner != null)
-            {
-                StackTrace = inner.StackTrace.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            }
+            //if (inner != null)
+            //{
+            //    StackTrace = inner.StackTrace.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            //}
         }
     }
 }
