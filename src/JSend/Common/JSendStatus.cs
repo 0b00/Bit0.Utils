@@ -1,5 +1,4 @@
 ﻿using Bit0.Utils.Common.Attributes;
-using Bit0.Utils.JSend.Exceptions;
 
 namespace Bit0.Utils.JSend.Common
 {

@@ -13,7 +13,7 @@ namespace Bit0.Utils.JSend.Responses
         /// JSend status
         /// </summary>
         [JsonIgnore]
-        protected JSendStatus Status { private get; set; }  = JSendStatus.Success;
+        protected JSendStatus Status { private get; set; } = JSendStatus.Success;
 
         /// <summary>
         /// JSend status as string
