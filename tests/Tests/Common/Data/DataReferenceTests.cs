@@ -1,5 +1,5 @@
 ﻿using System;
-using Bit0.Utils.Common.Data;
+using Bit0.Utils.Data.Reference;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Common.Data

@@ -1,5 +1,5 @@
 ﻿using System;
-using Bit0.Utils.Common.Data;
+using Bit0.Utils.Data.Reference;
 using Newtonsoft.Json;
 
 namespace Test1
