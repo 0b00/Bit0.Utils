@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Bit0.Utils.Common.Data
+namespace Bit0.Utils.Data.Reference
 {
     /// <summary>
     /// <see cref="JsonConverter"/> for <see cref="DataReference"/>.

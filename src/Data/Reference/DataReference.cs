@@ -1,6 +1,7 @@
 ﻿using System;
+using Bit0.Utils.Data.Exceptions;
 
-namespace Bit0.Utils.Common.Data
+namespace Bit0.Utils.Data.Reference
 {
     /// <summary>
     /// Identity object
@@ -8,7 +9,7 @@ namespace Bit0.Utils.Common.Data
     public class DataReference : IEquatable<DataReference>
     {
 
-        private const string _guidFormat = "D";
+        private const string GuidFormat = "D";
 
         /// <summary>
         /// String representation of Id
@@ -102,7 +103,7 @@ namespace Bit0.Utils.Common.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return ToString(_guidFormat);
+            return ToString(GuidFormat);
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Bit0.Utils.Common.Data
                 throw new InvalidDataReferenceCastException(id, e);
             }
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -156,7 +157,7 @@ namespace Bit0.Utils.Common.Data
         /// <returns></returns>
         public bool Equals(DataReference other)
         {
-            return  other != null && Id.Equals(other.Id);
+            return other != null && Id.Equals(other.Id);
         }
 
         /// <summary>
