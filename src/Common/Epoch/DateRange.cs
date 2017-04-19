@@ -17,11 +17,11 @@ namespace Bit0.Utils.Common.Epoch
         /// </summary>
         public DateTime End { get; set; }
 
-        /// <summary>
-        /// Date range
-        /// </summary>
-        public DateRange()
-        { }
+        ///// <summary>
+        ///// Date range
+        ///// </summary>
+        //public DateRange()
+        //{ }
 
         /// <summary>
         /// Date range
@@ -41,7 +41,7 @@ namespace Bit0.Utils.Common.Epoch
         public TimeSpan TimeSpan => End - Start;
 
         /// <summary>
-        /// Checks if a given date is range
+        /// Checks if today is in range
         /// </summary>
         /// <param name="includeStartEnd">Including start and end</param>
         /// <returns></returns>
@@ -51,7 +51,7 @@ namespace Bit0.Utils.Common.Epoch
         }
 
         /// <summary>
-        /// Checks if a given date is range
+        /// Checks if a given date is in range
         /// </summary>
         /// <param name="dateToCheck">Date to check</param>
         /// <param name="includeStartEnd">Including start and end</param>
