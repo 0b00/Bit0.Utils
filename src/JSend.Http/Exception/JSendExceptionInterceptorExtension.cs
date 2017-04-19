@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 
-namespace Bit0.Utils.JSend.Http
+namespace Bit0.Utils.JSend.Http.Exception
 {
     /// <summary>
     /// <see cref="IApplicationBuilder"/> extension methods for the <see cref="JSendExceptionInterceptor"/>.

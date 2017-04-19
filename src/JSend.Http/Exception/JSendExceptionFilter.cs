@@ -1,12 +1,12 @@
 ﻿using System;
-using Bit0.Utils.JSend.Exceptions;
+using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.JSend.Responses;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 
-namespace Bit0.Utils.JSend.Http
+namespace Bit0.Utils.JSend.Http.Exception
 {
     /// <summary>
     /// JSend Exception Filter
@@ -37,7 +37,7 @@ namespace Bit0.Utils.JSend.Http
         {
             JsonResult jsonResult;
 
-            if (context.Exception is JSendException exception)
+            if (context.Exception is ExceptionBase exception)
             {
                 jsonResult = new JsonResult(exception.ResponseObject)
                 {
