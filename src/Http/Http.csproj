@@ -18,8 +18,8 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.Http</RootNamespace>
     <Version>0.7.0</Version>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PostBuildEvent>move U:\Code\Bit0.Utils\src\Http\bin\Debug\*.nupkg U:\Nuget</PostBuildEvent>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PostBuildEvent>U:\Nuget\build.bat U:\Code\Bit0.Utils\src\Http</PostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,8 +28,8 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.3.0" />
   </ItemGroup>
 
-  <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
   </Target>
 
 </Project>

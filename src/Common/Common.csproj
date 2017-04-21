@@ -19,9 +19,8 @@
     <RootNamespace>Bit0.Utils.Common</RootNamespace>
     <Version>0.9.2</Version>
     <AssemblyVersion>0.9.2.0</AssemblyVersion>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <FileVersion>0.9.2.0</FileVersion>
-    <PostBuildEvent>move U:\Code\Bit0.Utils\src\Common\bin\Debug\*.nupkg U:\Nuget</PostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,8 +28,8 @@
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
   </ItemGroup>
 
-  <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
   </Target>
 
 </Project>

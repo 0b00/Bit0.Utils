@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>Bit0.Utils.Data.Repositories</AssemblyName>
+    <RootNamespace>Bit0.Utils.Data.Repositories</RootNamespace>
+    <PackageId>Bit0.Utils.Data.Repositories</PackageId>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version>0.9.0</Version>
+    <Authors>b1thunt3r</Authors>
+    <Company />
+    <Product>Bit0.Utils.Data.Repositories</Product>
+    <Description>Data repositories for Bit0 Data provides</Description>
+    <Copyright></Copyright>
+    <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bit0.Utils.Data.Providers" Version="0.9.1" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
+  </Target>
+
+</Project>

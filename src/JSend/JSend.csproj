@@ -17,7 +17,7 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.JSend</RootNamespace>
     <Version>1.1.0</Version>
-    <PostBuildEvent>move U:\Code\Bit0.Utils\src\JSend\bin\Debug\*.nupkg U:\Nuget</PostBuildEvent>
+    <PostBuildEvent>U:\Nuget\build.bat U:\Code\Bit0.Utils\src\JSend</PostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,8 +25,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
   </ItemGroup>
 
-  <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
   </Target>
 
 </Project>

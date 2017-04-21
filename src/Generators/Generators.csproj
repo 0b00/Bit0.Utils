@@ -19,9 +19,9 @@
     <RootNamespace>Bit0.Utils.Generators</RootNamespace>
     <Version>1.0.3</Version>
   </PropertyGroup>
-
-  <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
   </Target>
 
 </Project>

@@ -1,9 +1,10 @@
 ﻿using Bit0.Utils.Common.Attributes;
+using Bit0.Utils.Common.Exceptions;
 
 namespace Bit0.Utils.JSend.Common
 {
     /// <summary>
-    /// List fof response status for <see cref="JSendException"/>
+    /// List fof response status for <see cref="ExceptionBase"/>
     /// </summary>
     public enum JSendStatus
     {
