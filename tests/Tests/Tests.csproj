@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Common\Common.csproj" />
+    <ProjectReference Include="..\..\src\Data.Providers\Data.Providers.csproj" />
     <ProjectReference Include="..\..\src\Data\Data.csproj" />
   </ItemGroup>
 

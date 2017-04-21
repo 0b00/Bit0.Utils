@@ -25,7 +25,9 @@ namespace Bit0.Utils.Data.Providers
 
 
         #region Protected Properties
-
+        /// <summary>
+        /// Data List
+        /// </summary>
         protected IDictionary<string, IData> DataList { get; } = new Dictionary<string, IData>();
 
         #endregion Protected Properties
@@ -34,6 +36,9 @@ namespace Bit0.Utils.Data.Providers
 
         #region Protected Methods
 
+        /// <summary>
+        /// Load Data
+        /// </summary>
         protected virtual void LoadData()
         {
             // load from where
