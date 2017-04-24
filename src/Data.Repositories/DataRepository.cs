@@ -34,6 +34,13 @@ namespace Bit0.Utils.Data.Repositories
         /// <returns><paramref name="data"/></returns>
         public T Save<T>(T data) where T : IData
         {
+            if (data.CreatedOn == DateTime.MinValue)
+            {
+                data.CreatedOn = DateTime.UtcNow;
+            }
+
+            data.UpdatedOn = DateTime.UtcNow;
+
             var id = DataReference.IsEmptyOrNull(data.Id) ? DataProvider.Add(data) : DataProvider.Update(data);
             DataProvider.SaveChanges();
 

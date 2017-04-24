@@ -12,26 +12,26 @@
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-win+net45+wp8+win81+wpa8;net45;net46;net461;portable-net45+win8+wpa81+wp8</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.Security</RootNamespace>
-    <Version>0.6.0</Version>
+    <Version>0.6.1</Version>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <AssemblyVersion>0.6.0.0</AssemblyVersion>
-    <FileVersion>0.6.0.0</FileVersion>
+    <AssemblyVersion>0.6.1.0</AssemblyVersion>
+    <FileVersion>0.6.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Common" Version="0.9.2" />
-    <PackageReference Include="jose-jwt" Version="2.2.0" />
+    <PackageReference Include="Bit0.Utils.Common" Version="0.9.3" />
+    <PackageReference Include="jose-jwt" Version="2.3.0" />
     <PackageReference Include="jwt.dotnetstandard.json-net" Version="0.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
+    <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
   </Target>
 
 </Project>

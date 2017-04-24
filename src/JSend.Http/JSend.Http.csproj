@@ -12,25 +12,25 @@
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-win+net45+wp8+win81+wpa8;net45;net46;net461;portable-net45+win8+wpa81+wp8</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.JSend.Http</RootNamespace>
-    <Version>0.9.0</Version>
+    <Version>0.9.4</Version>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Common" Version="0.9.2" />
-    <PackageReference Include="Bit0.Utils.JSend" Version="1.1.0" />
+    <PackageReference Include="Bit0.Utils.Common" Version="0.9.3" />
+    <PackageReference Include="Bit0.Utils.JSend" Version="1.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="1.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)\build.bat $(ProjectDir) $(Configuration)" />
+    <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
   </Target>
 
 </Project>
