@@ -6,11 +6,11 @@
     <RootNamespace>Bit0.Utils.Data.Repositories</RootNamespace>
     <PackageId>Bit0.Utils.Data.Repositories</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>0.9.1</Version>
+    <Version>0.9.2</Version>
     <Authors>b1thunt3r</Authors>
     <Company />
     <Product>Bit0.Utils.Data.Repositories</Product>
-    <Description>Data repositories for Bit0 Data provides</Description>
+    <Description>Data repositories for Bit0 Data provides\</Description>
     <Copyright></Copyright>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils/</PackageProjectUrl>
