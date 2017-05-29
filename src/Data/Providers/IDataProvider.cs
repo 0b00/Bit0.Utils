@@ -34,10 +34,10 @@ namespace Bit0.Utils.Data.Providers
         T Entry<T>(DataReference id) where T : IData;
 
         /// <summary>
-        /// Add a new entry to databse
+        /// Add a new entry to database
         /// </summary>
         /// <typeparam name="T">Element type</typeparam>
-        /// <param name="data">ELement to save</param>
+        /// <param name="data">Element to save</param>
         /// <returns>Id of newly saved <paramref name="data"/></returns>
         DataReference Add<T>(T data) where T : IData;
 
@@ -45,15 +45,16 @@ namespace Bit0.Utils.Data.Providers
         /// Update an exsiting entry
         /// </summary>
         /// <typeparam name="T">Element type</typeparam>
-        /// <param name="data">ELement to update</param>
+        /// <param name="data">Element to update</param>
         /// <returns>If of the element</returns>
         DataReference Update<T>(T data) where T : IData;
 
         /// <summary>
-        /// Reomve element by id
+        /// Remove element by id
         /// </summary>
+        /// <typeparam name="T">Element type</typeparam>
         /// <param name="id">Id of element to remove</param>
-        void Remove(DataReference id);
+        void Remove<T>(DataReference id) where T : IData;
 
         /// <summary>
         /// Remove element
