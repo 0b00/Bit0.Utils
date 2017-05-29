@@ -7,7 +7,14 @@ namespace Bit0.Utils.JSend.Responses
     /// <summary>
     /// JSend Response base
     /// </summary>
-    public abstract class JSendResponse
+    public class JSendResponse : JSendResponse<object>
+    { }
+
+    /// <summary>
+    /// JSend Response base
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class JSendResponse<T> where T : class
     {
         /// <summary>
         /// JSend status
@@ -37,6 +44,6 @@ namespace Bit0.Utils.JSend.Responses
         /// JSend payload
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public object Data { get; set; }
+        public T Data { get; set; }
     }
 }
