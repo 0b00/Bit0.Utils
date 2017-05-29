@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Bit0.Utils.Common.Exceptions;
+using Bit0.Utils.Data;
 using Bit0.Utils.Data.Providers;
 using Bit0.Utils.Data.Reference;
 using Xunit;
@@ -122,7 +123,7 @@ namespace Bit0.Utils.Tests.Data.Providers
             };
 
             var id3 = _dataProvider.Add(user3);
-            _dataProvider.Remove(id3);
+            _dataProvider.Remove<IData>(id3);
             Assert.Throws(typeof(KeyMissingException), () =>
             {
                 var rUser3 = _dataProvider.Entry<User>(id3);
