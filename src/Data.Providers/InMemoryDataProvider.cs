@@ -125,10 +125,11 @@ namespace Bit0.Utils.Data.Providers
         /// <summary>
         /// Remove element by id 
         /// </summary>
+        /// <typeparam name="T">Element type</typeparam>
         /// <param name="id">
         /// Id of element to remove 
         /// </param>
-        public void Remove(DataReference id)
+        public void Remove<T>(DataReference id) where T : IData
         {
             if (DataList.ContainsKey(id))
             {
@@ -161,7 +162,7 @@ namespace Bit0.Utils.Data.Providers
                 throw new KeyMissingException(nameof(data.Id));
             }
 
-            Remove((DataReference)data.Id);
+            Remove<T>(data.Id);
         }
 
         /// <summary>
