@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using Jose;
 
 namespace Bit0.Utils.Security.Jwt

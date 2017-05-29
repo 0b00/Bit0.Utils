@@ -1,34 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Security utils for .net core by Bit0</Description>
-    <AssemblyTitle>Security utils by Bit0</AssemblyTitle>
-    <VersionPrefix>0.1.1</VersionPrefix>
-    <Authors>b1thunt3r</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>Bit0.Utils.Security</AssemblyName>
-    <PackageId>Bit0.Utils.Security</PackageId>
-    <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
+    <PackageId>Bit0.Utils.Security.JwtWrapper</PackageId>
+    <AssemblyName>Bit0.Utils.Security.JwtWrapper</AssemblyName>
+    <RootNamespace>Bit0.Utils.Security.Jwt</RootNamespace>
+    <Version>0.4</Version>
+    <Authors>b1thunt3r</Authors>
+    <Company />
+    <Description>Jwt wrapper by Bit0</Description>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils/</PackageProjectUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>    
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-win+net45+wp8+win81+wpa8;net45;net46;net461;portable-net45+win8+wpa81+wp8</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>Bit0.Utils.Security</RootNamespace>
-    <Version>0.7.0</Version>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <AssemblyVersion>0.7.0.0</AssemblyVersion>
-    <FileVersion>0.7.0.0</FileVersion>
   </PropertyGroup>
-
+  
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
   </Target>
-
+  
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Common" Version="0.9.3" />
+    <PackageReference Include="Bit0.Utils.Security" Version="0.7.0" />
+    <PackageReference Include="jose-jwt" Version="2.3.0" />
   </ItemGroup>
 
 </Project>

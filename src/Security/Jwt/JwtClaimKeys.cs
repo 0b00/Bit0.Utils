@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Bit0.Utils.Security.Jwt
+﻿namespace Bit0.Utils.Security.Jwt
 {
     /// <summary>
     /// Jwt claim keys
