@@ -2,7 +2,7 @@
 using Bit0.Utils.Data.Reference;
 using Xunit;
 
-namespace Bit0.Utils.Tests.Common.Data
+namespace Bit0.Utils.Tests.Data.Reference
 {
     public class DataReferenceTests
     {
@@ -40,11 +40,9 @@ namespace Bit0.Utils.Tests.Common.Data
         public void EmptyOrNull()
         {
             var id1 = DataReference.Empty;
-
-            DataReference id2 = null;
             
             Assert.True(DataReference.IsEmptyOrNull(id1));
-            Assert.True(DataReference.IsEmptyOrNull(id2));
+            Assert.True(DataReference.IsEmptyOrNull((DataReference) null));
         }
 
         [Fact]
