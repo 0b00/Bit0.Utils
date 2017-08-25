@@ -1,2 +1,9 @@
 language: csharp
 solution: Bit0.Utils.sln
+dotnet: 1.0.1
+dist: trusty
+sudo: required
+script:
+  - cd ./Bit0.Utils
+  - dotnet restore
+  - dotnet build
