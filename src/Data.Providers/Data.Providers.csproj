@@ -20,12 +20,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Data" Version="0.13.5" />
+    <PackageReference Include="Bit0.Utils.Data" Version="0.13.7" />
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <!--Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
-  </Target>
+  </Target-->
 
 </Project>
