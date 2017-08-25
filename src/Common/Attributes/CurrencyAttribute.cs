@@ -12,12 +12,19 @@ namespace Bit0.Utils.Common.Attributes
         /// Initialize a new instance of <see cref="CurrencyAttribute"/> class
         /// </summary>
         /// <param name="fullname">Fullname for the <see cref="Currency"/></param>
+        /// <param name="shortname">Shortname for the <see cref="Currency"/></param>
         /// <param name="symbol">Symbol for the <see cref="Currency"/></param>
-        public CurrencyAttribute(string fullname, string symbol)
+        public CurrencyAttribute(string fullname, string shortname, string symbol)
         {
             Fullname = fullname;
+            Shortname = shortname;
             Symbol = symbol;
         }
+
+        /// <summary>
+        /// Shortname for the <see cref="Currency"/>
+        /// </summary>
+        public string Shortname { get; set; }
 
         /// <summary>
         /// Fullname for the <see cref="Currency"/>

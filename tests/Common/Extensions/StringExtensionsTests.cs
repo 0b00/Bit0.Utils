@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Bit0.Utils.Common.Attributes;
+﻿using Bit0.Utils.Common.Attributes;
 using Bit0.Utils.Common.Extensions;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Common.Extensions

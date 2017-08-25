@@ -26,5 +26,15 @@ namespace Bit0.Utils.Common.Extensions
         {
             return c.GetFieldAttribute<CurrencyAttribute>().Symbol;
         }
+
+        /// <summary>
+        /// Get <see cref="CurrencyAttribute.Shortname"/>
+        /// </summary>
+        /// <param name="c"><see cref="Currency"/> field value</param>
+        /// <returns></returns>
+        public static string GetShortname(this Currency c)
+        {
+            return c.GetFieldAttribute<CurrencyAttribute>().Shortname;
+        }
     }
 }
