@@ -1,5 +1,6 @@
 ﻿using System;
 using Bit0.Utils.Common.Attributes;
+using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.Common.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -19,6 +20,11 @@ namespace Bit0.Utils.Common.Convertors
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
+            if (value == null)
+            {
+                throw new NullObjectException(nameof(value));
+            }
+
             if (!(value is Enum))
             {
                 throw new InvalidCastException($"Expected type '{typeof(Enum).FullName}' got '{value.GetType().FullName}'.");

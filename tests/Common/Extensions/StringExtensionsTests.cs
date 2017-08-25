@@ -44,7 +44,7 @@ namespace Bit0.Utils.Tests.Common.Extensions
         }
 
 
-        public enum StringTest
+        internal enum StringTest
         {
             [String("Item1")]
             Item1,
