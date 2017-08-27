@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bit0.Utils.Common" Version="0.9.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

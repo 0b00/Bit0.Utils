@@ -12,13 +12,13 @@ namespace Bit0.Utils.Common
         /// <summary>
         /// Swedish Kroner
         /// </summary>
-        [Currency("Swedish Kroner", "kr")]
+        [Currency("Swedish Kroner", "SEK", "kr")]
         SEK,
 
         /// <summary>
         /// United States Dollar
         /// </summary>
-        [Currency("US Dollar", "US$")]
+        [Currency("US Dollar", "USD", "US$")]
         USD
     }
 }

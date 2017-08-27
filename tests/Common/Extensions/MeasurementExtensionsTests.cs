@@ -33,6 +33,38 @@ namespace Bit0.Utils.Tests.Common.Extensions
         }
 
         [Fact]
+        public void NormalizedValueTest3()
+        {
+            var m = new Measurement
+            {
+                Unit = MeasurementUnit.Meter,
+                Value = 3
+            }.GetNormalizedValue();
+
+            Assert.Equal(3, m.Value);
+            Assert.Equal(MeasurementUnit.Meter, m.Unit);
+        }
+
+        [Fact]
+        public void ShortNameValueTest()
+        {
+            Assert.Equal("l", MeasurementUnit.Liter.GetShortname());
+            Assert.Equal("dl", MeasurementUnit.DeciLiter.GetShortname());
+            Assert.Equal("cl", MeasurementUnit.CentiLiter.GetShortname());
+            Assert.Equal("ml", MeasurementUnit.MiliLiter.GetShortname());
+            Assert.Equal("kg", MeasurementUnit.KiloGram.GetShortname());
+            Assert.Equal("hg", MeasurementUnit.HactoGram.GetShortname());
+            Assert.Equal("g", MeasurementUnit.Gram.GetShortname());
+            Assert.Equal("m", MeasurementUnit.Meter.GetShortname());
+            Assert.Equal("km", MeasurementUnit.KiloMeter.GetShortname());
+            Assert.Equal("dm", MeasurementUnit.DeciMeter.GetShortname());
+            Assert.Equal("cm", MeasurementUnit.CentiMeter.GetShortname());
+            Assert.Equal("mm", MeasurementUnit.MiliMeter.GetShortname());
+            Assert.Equal("pcs", MeasurementUnit.Piece.GetShortname());
+            Assert.Equal("boxes", MeasurementUnit.Boxes.GetShortname());
+        }
+
+        [Fact]
         public void AttributeConversionFactor()
         {
             Assert.Equal(1d, MeasurementUnit.Liter.GetConversionFactor());
@@ -48,6 +80,7 @@ namespace Bit0.Utils.Tests.Common.Extensions
             Assert.Equal(1d / 100, MeasurementUnit.CentiMeter.GetConversionFactor());
             Assert.Equal(1d / 1000, MeasurementUnit.MiliMeter.GetConversionFactor());
             Assert.Equal(1d, MeasurementUnit.Piece.GetConversionFactor());
+            Assert.Equal(1d, MeasurementUnit.Boxes.GetConversionFactor());
         }
 
         [Fact]
@@ -66,6 +99,7 @@ namespace Bit0.Utils.Tests.Common.Extensions
             Assert.Equal(MeasurementUnit.Meter, MeasurementUnit.CentiMeter.GetBaseUnit());
             Assert.Equal(MeasurementUnit.Meter, MeasurementUnit.MiliMeter.GetBaseUnit());
             Assert.Equal(MeasurementUnit.None, MeasurementUnit.Piece.GetBaseUnit());
+            Assert.Equal(MeasurementUnit.None, MeasurementUnit.Boxes.GetBaseUnit());
         }
     }
 }

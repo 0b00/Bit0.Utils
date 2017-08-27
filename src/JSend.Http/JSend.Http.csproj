@@ -26,7 +26,7 @@
     <PackageReference Include="Bit0.Utils.JSend" Version="1.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="1.1.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

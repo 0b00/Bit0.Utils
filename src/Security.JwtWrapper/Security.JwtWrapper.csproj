@@ -25,7 +25,7 @@
   
   <ItemGroup>
     <PackageReference Include="Bit0.Utils.Security" Version="0.7.1" />
-    <PackageReference Include="jose-jwt" Version="2.3.0" />
+    <PackageReference Include="jose-jwt" Version="2.4.0" />
   </ItemGroup>
 
 </Project>

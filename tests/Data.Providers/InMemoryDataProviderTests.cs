@@ -1,8 +1,9 @@
-﻿using System.Linq;
-using Bit0.Utils.Common.Exceptions;
+﻿using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.Data;
 using Bit0.Utils.Data.Providers;
 using Bit0.Utils.Data.Reference;
+using System;
+using System.Linq;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Data.Providers
@@ -28,6 +29,16 @@ namespace Bit0.Utils.Tests.Data.Providers
 
             Assert.NotNull(id);
             Assert.False(DataReference.IsEmptyOrNull(id));
+
+            // test null
+            Assert.Throws<NullObjectException>(() =>
+            {
+                _dataProvider.Add((User) null);
+            });
+
+            //Update
+            user0.Password = "T";
+            _dataProvider.Add(user0);
         }
 
         [Fact]
@@ -108,6 +119,25 @@ namespace Bit0.Utils.Tests.Data.Providers
             Assert.Equal(id, rId);
             Assert.NotEqual(pass, rUser2.Password);
             Assert.Equal(pass2, rUser2.Password);
+
+            // test null
+            Assert.Throws<NullObjectException>(() =>
+            {
+                _dataProvider.Update((User)null);
+            });
+
+            // add
+            var user3 = new User
+            {
+                Id = DataReference.NewIdentity(),
+                Username = "user2",
+                Password = pass
+            };
+
+            var id3 = _dataProvider.Update(user3);
+
+            Assert.NotNull(id3);
+            Assert.False(DataReference.IsEmptyOrNull(id3));
         }
 
         [Fact]
@@ -124,6 +154,7 @@ namespace Bit0.Utils.Tests.Data.Providers
 
             var id3 = _dataProvider.Add(user3);
             _dataProvider.Remove<IData>(id3);
+
             Assert.Throws(typeof(KeyMissingException), () =>
             {
                 var rUser3 = _dataProvider.Entry<User>(id3);
@@ -131,12 +162,32 @@ namespace Bit0.Utils.Tests.Data.Providers
             });
 
             var id4 = _dataProvider.Add(user4);
-
             var rUser4 = _dataProvider.Entry<User>(id4);
             _dataProvider.Remove(rUser4);
+
             Assert.Throws(typeof(KeyMissingException), () =>
             {
                 rUser4 = _dataProvider.Entry<User>(id4);
+            });
+
+            Assert.Throws<NullObjectException>(() =>
+            {
+                _dataProvider.Remove<IData>((User)null);
+            });
+
+            Assert.Throws<KeyMissingException>(() =>
+            {
+                _dataProvider.Remove<IData>(id3);
+            });
+
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                _dataProvider.Remove<IData>(new User());
+            });
+            
+            Assert.Throws<KeyMissingException>(() =>
+            {
+                _dataProvider.Remove<IData>(rUser4);
             });
         }
 
