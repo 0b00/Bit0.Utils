@@ -10,6 +10,7 @@ namespace Bit0.Utils.Common
         /// <summary>
         /// No measurment unit
         /// </summary>
+        [MeasurementUnit("None")]
         None = 0,
 
         /// <summary>

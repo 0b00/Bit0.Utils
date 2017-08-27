@@ -5,7 +5,7 @@
     <PackageId>Bit0.Utils.Security.JwtWrapper</PackageId>
     <AssemblyName>Bit0.Utils.Security.JwtWrapper</AssemblyName>
     <RootNamespace>Bit0.Utils.Security.Jwt</RootNamespace>
-    <Version>0.4</Version>
+    <Version>0.4.1</Version>
     <Authors>b1thunt3r</Authors>
     <Company />
     <Description>Jwt wrapper by Bit0</Description>
@@ -24,7 +24,7 @@
   </Target>
   
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Security" Version="0.7.0" />
+    <PackageReference Include="Bit0.Utils.Security" Version="0.7.1" />
     <PackageReference Include="jose-jwt" Version="2.3.0" />
   </ItemGroup>
 

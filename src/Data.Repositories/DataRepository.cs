@@ -94,7 +94,7 @@ namespace Bit0.Utils.Data.Repositories
         /// <param name="id">Id for data to delete</param>
         public void Delete(DataReference id)
         {
-            DataProvider.Remove(id);
+            DataProvider.Remove<IData>(id);
             DataProvider.SaveChanges();
         }
 

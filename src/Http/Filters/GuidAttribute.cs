@@ -12,15 +12,18 @@ namespace Bit0.Utils.Http.Filters
     public class GuidAttribute : DataTypeAttribute
     {
         private readonly bool _hasList;
+        private readonly bool _required;
 
         /// <summary>
         /// Validate value as Guid
         /// </summary>
         /// <param name="hasList">Part of a list?</param>
-        public GuidAttribute(bool hasList = false)
+        /// <param name="required">Is requires?</param>
+        public GuidAttribute(bool hasList = false, bool required = true)
             : base("Guid")
         {
             _hasList = hasList;
+            _required = required;
 
             ErrorMessage = _hasList ? "The {0} field does not contains a valid Guid list." : "The {0} field is not a valid Guid.";
         }
@@ -33,7 +36,7 @@ namespace Bit0.Utils.Http.Filters
         public override bool IsValid(object value)
         {
 
-            if (value == null) return false;
+            if (value == null) return !_required;
 
             return !_hasList
                 ? Guid.TryParse(value.ToString(), out Guid guid)

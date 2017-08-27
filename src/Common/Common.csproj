@@ -17,10 +17,10 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.Common</RootNamespace>
-    <Version>0.9.3</Version>
-    <AssemblyVersion>0.9.3.0</AssemblyVersion>
+    <Version>0.9.4</Version>
+    <AssemblyVersion>0.9.4.0</AssemblyVersion>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <FileVersion>0.9.3.0</FileVersion>
+    <FileVersion>0.9.4.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace Bit0.Utils.Data.Providers
         #region Private Fields
 
         private readonly int _maxTransBeforeWrite;
-        private readonly FileInfo _storageFile;
+        protected readonly FileInfo _storageFile;
         private int _operationsCount;
         private readonly JsonSerializerSettings _jsonSettings;
 
@@ -28,7 +28,8 @@ namespace Bit0.Utils.Data.Providers
         /// Initialize a new instance of <see cref="SimpleDataProvider" /> class 
         /// </summary>
         /// <param name="maxTransBeforeWrite">Wait max saves before writing to file</param>
-        public SimpleDataProvider(int maxTransBeforeWrite = 1)
+        /// <param name="storageFile">Storage file</param>
+        public SimpleDataProvider(int maxTransBeforeWrite = 1, FileInfo storageFile = null)
         {
             _jsonSettings = new JsonSerializerSettings
             {
@@ -39,7 +40,7 @@ namespace Bit0.Utils.Data.Providers
 
             _maxTransBeforeWrite = maxTransBeforeWrite >= 1 ? maxTransBeforeWrite : 1;
 
-            _storageFile = new FileInfo("SimpleDataProvider.Data.json");
+            _storageFile = storageFile ?? new FileInfo("SimpleDataProvider.Data.json");
             LoadData();
         }
 

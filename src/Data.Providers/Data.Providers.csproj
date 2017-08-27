@@ -6,7 +6,7 @@
     <RootNamespace>Bit0.Utils.Data.Providers</RootNamespace>
     <PackageId>Bit0.Utils.Data.Providers</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>0.9.4</Version>
+    <Version>0.9.9</Version>
     <Authors>b1thunt3r</Authors>
     <Company />
     <Description>Data providers from Bit0 Utils</Description>
@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Data" Version="0.13.5" />
+    <PackageReference Include="Bit0.Utils.Data" Version="0.13.7" />
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
   </ItemGroup>
 
