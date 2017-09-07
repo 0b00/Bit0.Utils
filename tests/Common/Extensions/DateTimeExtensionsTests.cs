@@ -24,13 +24,11 @@ namespace Bit0.Utils.Tests.Common.Extensions
         [Fact]
         public void ToDate()
         {
-            var local = new DateTime(2017, 4, 27, 15, 59, 12, DateTimeKind.Local).ToUnixEpoch();
             var utc = new DateTime(2017, 4, 27, 13, 59, 12, DateTimeKind.Utc).ToUnixEpoch();
 
             var expected = 1493301552L;
 
             Assert.Equal(expected, utc);
-            Assert.Equal(expected, local);
         }
     }
 }
