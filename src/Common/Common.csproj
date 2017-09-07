@@ -28,8 +28,8 @@
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <!--Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
-  </Target>
+  </Target-->
 
 </Project>

@@ -23,12 +23,12 @@
     <FileVersion>0.7.1.0</FileVersion>
   </PropertyGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
-  </Target>
+  </Target>-->
 
   <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Common" Version="0.9.4" />
+    <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 
 </Project>

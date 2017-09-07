@@ -19,12 +19,12 @@
     <FileVersion>0.9.4.0</FileVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Bit0.Utils.Data.Providers" Version="0.9.9" />
-  </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
-  </Target>
+  </Target>-->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Providers\Data.Providers.csproj" />
+  </ItemGroup>
 
 </Project>
