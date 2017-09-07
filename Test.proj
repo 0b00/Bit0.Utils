@@ -1,0 +1,10 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+
+  <Target Name="VSTest">
+    <ItemGroup>
+      <TestProjects Include="$(MSBuildThisFileDirectory)tests\Generators\Generators.csproj" />
+    </ItemGroup>
+    <MSBuild Projects="@(TestProjects)" Targets="VSTest" Properties="VSTestNoBuild=true" ContinueOnError="ErrorAndContinue"/>
+  </Target>
+
+</Project>

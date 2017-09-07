@@ -18,6 +18,14 @@ namespace Bit0.Utils.Tests.Data.Providers
         }
 
         [Fact]
+        public void LoadAndSave()
+        {
+            _dataProvider.SaveChanges();
+
+            Assert.True(true);
+        }
+
+        [Fact]
         public void Add()
         {
             var user0 = new User

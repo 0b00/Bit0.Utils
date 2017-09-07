@@ -14,7 +14,7 @@ namespace Bit0.Utils.Data.Reference
         /// <summary>
         /// String representation of Id
         /// </summary>
-        public Guid Id { get; private set; }
+        public Guid Id { get; }
 
         /// <summary>
         /// Create a new instance of <see cref="DataReference"/>
@@ -22,6 +22,14 @@ namespace Bit0.Utils.Data.Reference
         public DataReference()
         {
             Id = Guid.NewGuid();
+        }
+
+        /// <summary>
+        /// Create a new instance of <see cref="DataReference"/>
+        /// </summary>
+        private DataReference(Guid id)
+        {
+            Id = id;
         }
 
         /// <summary>
@@ -37,10 +45,7 @@ namespace Bit0.Utils.Data.Reference
         /// Empty <see cref="DataReference"/>
         /// </summary>
         /// <returns></returns>
-        public static DataReference Empty => new DataReference
-        {
-            Id = Guid.Empty
-        };
+        public static DataReference Empty => new DataReference(Guid.Empty);
 
         /// <summary>
         /// Convert <see cref="string"/> to <see cref="DataReference"/>
@@ -60,10 +65,7 @@ namespace Bit0.Utils.Data.Reference
                 throw new InvalidDataReferenceCastException(id);
             }
 
-            return new DataReference
-            {
-                Id = guid
-            };
+            return new DataReference(guid);
         }
 
         /// <summary>
@@ -72,10 +74,7 @@ namespace Bit0.Utils.Data.Reference
         /// <param name="id"></param>
         public static implicit operator DataReference(Guid id)
         {
-            return new DataReference
-            {
-                Id = id
-            };
+            return new DataReference(id);
         }
 
         /// <summary>

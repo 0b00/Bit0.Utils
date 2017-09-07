@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>    
     <AssemblyName>Bit0.Utils.Tests.Generators</AssemblyName>    
     <RootNamespace>Bit0.Utils.Tests.Generators</RootNamespace>
+    <DebugType>full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Data\Data.csproj" />
     <ProjectReference Include="..\..\src\Generators\Generators.csproj" />
   </ItemGroup>
 

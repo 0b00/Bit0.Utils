@@ -22,7 +22,7 @@ namespace Bit0.Utils.Tests.Common.Extensions
         }
 
         [Fact]
-        public void ToDate()
+        public void ToUnixEpoch()
         {
             var utc = new DateTime(2017, 4, 27, 13, 59, 12, DateTimeKind.Utc).ToUnixEpoch();
 
