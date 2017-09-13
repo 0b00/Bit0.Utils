@@ -12,7 +12,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// </summary>
         /// <param name="key">Missing key name</param>
         /// <param name="inner">Inner exception</param>
-        public KeyMissingException(string key, Exception inner = null)
+        public KeyMissingException(String key, Exception inner = null)
             : base($"Key not found: {key}", 500, inner)
         { }
 
@@ -23,7 +23,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="keyType">Missing key type</param>
         /// <param name="key">Missing key name</param>
         /// <param name="inner">Inner exception</param>
-        public KeyMissingException(Type keyType, string key, Exception inner = null)
+        public KeyMissingException(Type keyType, String key, Exception inner = null)
             : base(new
             {
                 message = $"{keyType.Name} not found: {key}",

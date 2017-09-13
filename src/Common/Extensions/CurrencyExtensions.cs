@@ -1,4 +1,5 @@
-﻿using Bit0.Utils.Common.Attributes;
+﻿using System;
+using Bit0.Utils.Common.Attributes;
 
 namespace Bit0.Utils.Common.Extensions
 {
@@ -12,7 +13,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="c"><see cref="Currency"/> field value</param>
         /// <returns></returns>
-        public static string GetFullname(this Currency c)
+        public static String GetFullname(this Currency c)
         {
             return c.GetFieldAttribute<CurrencyAttribute>().Fullname;
         }
@@ -22,7 +23,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="c"><see cref="Currency"/> field value</param>
         /// <returns></returns>
-        public static string GetSymbol(this Currency c)
+        public static String GetSymbol(this Currency c)
         {
             return c.GetFieldAttribute<CurrencyAttribute>().Symbol;
         }
@@ -32,7 +33,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="c"><see cref="Currency"/> field value</param>
         /// <returns></returns>
-        public static string GetShortname(this Currency c)
+        public static String GetShortname(this Currency c)
         {
             return c.GetFieldAttribute<CurrencyAttribute>().Shortname;
         }

@@ -28,7 +28,7 @@ namespace Bit0.Utils.Data.Providers
         /// <summary>
         /// Data List
         /// </summary>
-        protected IDictionary<string, IData> DataList { get; } = new Dictionary<string, IData>();
+        protected IDictionary<String, IData> DataList { get; } = new Dictionary<String, IData>();
 
         #endregion Protected Properties
 
@@ -117,7 +117,7 @@ namespace Bit0.Utils.Data.Providers
         /// </param>
         /// <returns>
         /// </returns>
-        public IEnumerable<T> List<T>(Func<T, bool> predicate) where T : IData
+        public IEnumerable<T> List<T>(Func<T, Boolean> predicate) where T : IData
         {
             return Set<T>().Where(predicate).AsEnumerable();
         }
@@ -169,7 +169,7 @@ namespace Bit0.Utils.Data.Providers
         /// Save changes to database, leave empty if not needed
         /// </summary>
         /// <param name="force">Force changes</param>
-        public virtual void SaveChanges(bool force = false)
+        public virtual void SaveChanges(Boolean force = false)
         {
             // save where!!! its in the memory ;-P
         }
@@ -188,7 +188,7 @@ namespace Bit0.Utils.Data.Providers
         }
 
         /// <summary>
-        /// Update an exsiting entry 
+        /// Update an existing entry 
         /// </summary>
         /// <typeparam name="T">
         /// Element type 

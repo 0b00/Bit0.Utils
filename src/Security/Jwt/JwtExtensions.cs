@@ -16,13 +16,13 @@ namespace Bit0.Utils.Security.Jwt
         /// <param name="jwt"></param>
         /// <param name="key"></param>
         /// <param name="errorMessage"></param>
-        public static void ValidateDate(this IDictionary<string, object> jwt, string key, string errorMessage)
+        public static void ValidateDate(this IDictionary<String, Object> jwt, String key, String errorMessage)
         {
 
-            double epoch;
+            Double epoch;
             try
             {
-                epoch = (double)jwt[key];
+                epoch = (Double)jwt[key];
             }
             catch (InvalidCastException ex)
             {
@@ -36,7 +36,7 @@ namespace Bit0.Utils.Security.Jwt
 
             if (key == JwtClaimKeys.Expiry ? epoch.ToUtc() <= DateTime.UtcNow : epoch.ToUtc() > DateTime.UtcNow)
             {
-                throw new InvalidCredentialsException(new { message = string.Format(errorMessage, epoch.ToUtc().ToString("u")) });
+                throw new InvalidCredentialsException(new { message = String.Format(errorMessage, epoch.ToUtc().ToString("u")) });
             }
         }
     }

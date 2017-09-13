@@ -9,7 +9,7 @@ namespace Bit0.Utils.Data.Reference
     public class DataReference : IEquatable<DataReference>
     {
 
-        private const string GuidFormat = "D";
+        private const String GuidFormat = "D";
 
         /// <summary>
         /// String representation of Id
@@ -51,11 +51,11 @@ namespace Bit0.Utils.Data.Reference
         /// Convert <see cref="string"/> to <see cref="DataReference"/>
         /// </summary>
         /// <param name="id"></param>
-        public static implicit operator DataReference(string id)
+        public static implicit operator DataReference(String id)
         {
             Guid guid;
 
-            if (string.IsNullOrWhiteSpace(id))
+            if (String.IsNullOrWhiteSpace(id))
             {
                 id = Empty;
             }
@@ -81,7 +81,7 @@ namespace Bit0.Utils.Data.Reference
         /// Convert <see cref="DataReference"/> to <see cref="string"/>
         /// </summary>
         /// <param name="id"></param>
-        public static implicit operator string(DataReference id)
+        public static implicit operator String(DataReference id)
         {
             return id.ToString();
         }
@@ -91,7 +91,7 @@ namespace Bit0.Utils.Data.Reference
         /// </summary>
         /// <param name="format">GUID Format, default "D"</param>
         /// <returns></returns>
-        public string ToString(string format)
+        public String ToString(String format)
         {
             return Id.ToString(format);
         }
@@ -100,7 +100,7 @@ namespace Bit0.Utils.Data.Reference
         /// String representation of Id
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        public override String ToString()
         {
             return ToString(GuidFormat);
         }
@@ -110,12 +110,12 @@ namespace Bit0.Utils.Data.Reference
         /// </summary>
         /// <param name="id"><see cref="DataReference"/> to check</param>
         /// <returns>true - if null or empty</returns>
-        public static bool IsEmptyOrNull(DataReference id)
+        public static Boolean IsEmptyOrNull(DataReference id)
         {
             if (id == null)
                 return true;
 
-            return !(!string.IsNullOrWhiteSpace(id) && id.Id != Guid.Empty);
+            return !(!String.IsNullOrWhiteSpace(id) && id.Id != Guid.Empty);
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Bit0.Utils.Data.Reference
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static DataReference Parse(string id)
+        public static DataReference Parse(String id)
         {
             return id;
         }
@@ -134,7 +134,7 @@ namespace Bit0.Utils.Data.Reference
         /// <param name="id"></param>
         /// <param name="ref"></param>
         /// <returns></returns>
-        public static bool TryParse(string id, out DataReference @ref)
+        public static Boolean TryParse(String id, out DataReference @ref)
         {
             @ref = null;
             try
@@ -154,7 +154,7 @@ namespace Bit0.Utils.Data.Reference
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public bool Equals(DataReference other)
+        public Boolean Equals(DataReference other)
         {
             return other != null && Id.Equals(other.Id);
         }
@@ -164,7 +164,7 @@ namespace Bit0.Utils.Data.Reference
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public override bool Equals(object obj)
+        public override Boolean Equals(Object obj)
         {
             var other = obj as DataReference;
             return other != null && Equals(other);
@@ -174,7 +174,7 @@ namespace Bit0.Utils.Data.Reference
         /// 
         /// </summary>
         /// <returns></returns>
-        public override int GetHashCode()
+        public override Int32 GetHashCode()
         {
             return Id.GetHashCode();
         }

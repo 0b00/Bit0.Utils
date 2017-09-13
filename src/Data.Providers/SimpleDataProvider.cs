@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Bit0.Utils.Data.Reference;
@@ -13,9 +14,9 @@ namespace Bit0.Utils.Data.Providers
     {
         #region Private Fields
 
-        private readonly int _maxTransBeforeWrite;
+        private readonly Int32 _maxTransBeforeWrite;
         protected readonly FileInfo _storageFile;
-        private int _operationsCount;
+        private Int32 _operationsCount;
         private readonly JsonSerializerSettings _jsonSettings;
 
         #endregion Private Fields
@@ -29,7 +30,7 @@ namespace Bit0.Utils.Data.Providers
         /// </summary>
         /// <param name="maxTransBeforeWrite">Wait max saves before writing to file</param>
         /// <param name="storageFile">Storage file</param>
-        public SimpleDataProvider(int maxTransBeforeWrite = 1, FileInfo storageFile = null)
+        public SimpleDataProvider(Int32 maxTransBeforeWrite = 1, FileInfo storageFile = null)
         {
             _jsonSettings = new JsonSerializerSettings
             {
@@ -59,11 +60,11 @@ namespace Bit0.Utils.Data.Providers
             if (_storageFile.Exists && _storageFile.Length > 20)
             {
 
-                IDictionary<string, IData> list;
+                IDictionary<String, IData> list;
                 using (var sr = _storageFile.OpenText())
                 {
                     var str = sr.ReadToEnd();
-                    list = JsonConvert.DeserializeObject<IDictionary<string, IData>>(str, _jsonSettings);
+                    list = JsonConvert.DeserializeObject<IDictionary<String, IData>>(str, _jsonSettings);
                     //list = (IDictionary<string, object>) _serializer.Deserialize(sr, typeof(IDictionary<string, object>));
                 }
 
@@ -80,7 +81,7 @@ namespace Bit0.Utils.Data.Providers
         /// Save data to file
         /// </summary>
         /// <param name="force">Force save to file</param>
-        public override void SaveChanges(bool force = false)
+        public override void SaveChanges(Boolean force = false)
         {
             if (_operationsCount % _maxTransBeforeWrite == 0 || force)
             {

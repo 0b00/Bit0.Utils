@@ -12,22 +12,22 @@ namespace Bit0.Utils.Common.Exceptions
         /// <summary>
         /// Exception status
         /// </summary>
-        public int StatusCode { get; }
+        public Int32 StatusCode { get; }
 
         /// <summary>
         /// Inner status
         /// </summary>
-        public int InnerStatus { get; }
+        public Int32 InnerStatus { get; }
 
         /// <summary>
         /// Exception message
         /// </summary>
-        public string Message { get; }
+        public String Message { get; }
 
         /// <summary>
         /// Exception data
         /// </summary>
-        public object Data { get; }
+        public Object Data { get; }
 
         /// <summary>
         /// Inner Exception
@@ -41,7 +41,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="status">Error status</param>
         /// <param name="innerStatus">Inner status</param>
         /// <param name="inner">Inner Exception</param>
-        public ExceptionResponse(string message, int status = 500, int innerStatus = 500, Exception inner = null)
+        public ExceptionResponse(String message, Int32 status = 500, Int32 innerStatus = 500, Exception inner = null)
             : this(status, innerStatus, inner)
         {
             Message = message;
@@ -54,13 +54,13 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="status">Fail status</param>
         /// <param name="innerStatus">Inner status</param>
         /// <param name="inner">Inner Exception</param>
-        public ExceptionResponse(object data, int status = 500, int innerStatus = 500, Exception inner = null)
+        public ExceptionResponse(Object data, Int32 status = 500, Int32 innerStatus = 500, Exception inner = null)
             : this(status, innerStatus, inner)
         {
             Data = data;
         }
 
-        private ExceptionResponse(int status, int innerStatus, Exception inner)
+        private ExceptionResponse(Int32 status, Int32 innerStatus, Exception inner)
         {
             StatusCode = status;
             InnerStatus = innerStatus;

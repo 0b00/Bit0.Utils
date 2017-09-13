@@ -1,4 +1,6 @@
-﻿namespace Bit0.Utils.Security.Jwt
+﻿using System;
+
+namespace Bit0.Utils.Security.Jwt
 {
     /// <summary>
     /// Jwt claim keys
@@ -8,27 +10,27 @@
         /// <summary>
         /// Claim key for audience
         /// </summary>
-        public const string Audience = "aud";
+        public const String Audience = "aud";
 
         /// <summary>
         /// Claim key for issuer
         /// </summary>
-        public const string Issuer = "iss";
+        public const String Issuer = "iss";
 
 
         /// <summary>
         /// Claim key for expiry
         /// </summary>
-        public const string Expiry = "exp";
+        public const String Expiry = "exp";
 
         /// <summary>
         /// Claim key for issued at
         /// </summary>
-        public const string IssuedAt = "iat";
+        public const String IssuedAt = "iat";
 
         /// <summary>
         /// Claim key for not before
         /// </summary>
-        public const string NotBefore = "nbf";
+        public const String NotBefore = "nbf";
     }
 }

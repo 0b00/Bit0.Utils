@@ -45,7 +45,7 @@ namespace Bit0.Utils.Common.Epoch
         /// </summary>
         /// <param name="includeStartEnd">Including start and end</param>
         /// <returns></returns>
-        public bool IsBetween(bool includeStartEnd = true)
+        public Boolean IsBetween(Boolean includeStartEnd = true)
         {
             return IsBetween(DateTime.Now, includeStartEnd);
         }
@@ -56,7 +56,7 @@ namespace Bit0.Utils.Common.Epoch
         /// <param name="dateToCheck">Date to check</param>
         /// <param name="includeStartEnd">Including start and end</param>
         /// <returns>True if date is range</returns>
-        public bool IsBetween(DateTime dateToCheck, bool includeStartEnd = true)
+        public Boolean IsBetween(DateTime dateToCheck, Boolean includeStartEnd = true)
         {
             return includeStartEnd
                 ? dateToCheck >= Start && dateToCheck <= End

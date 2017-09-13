@@ -12,34 +12,34 @@ namespace Bit0.Utils.Security.Jwt
         /// <summary>
         /// List of claims
         /// </summary>
-        protected IDictionary<string, object> ClaimsList = new Dictionary<string, object>();
+        protected IDictionary<String, Object> ClaimsList = new Dictionary<String, Object>();
 
         /// <inheritdoc />
-        public abstract IDictionary<string, object> Claims { get; }
+        public abstract IDictionary<String, Object> Claims { get; }
 
         /// <inheritdoc />
-        public double Expiry => (double)ClaimsList[JwtClaimKeys.Expiry];
+        public Double Expiry => (Double)ClaimsList[JwtClaimKeys.Expiry];
 
         /// <inheritdoc />
-        public double IssuedAt => (double)ClaimsList[JwtClaimKeys.IssuedAt];
+        public Double IssuedAt => (Double)ClaimsList[JwtClaimKeys.IssuedAt];
 
         /// <inheritdoc />
-        public double NotBefore => (double)ClaimsList[JwtClaimKeys.NotBefore];
+        public Double NotBefore => (Double)ClaimsList[JwtClaimKeys.NotBefore];
 
         /// <inheritdoc />
-        public string Issuer => (string)ClaimsList[JwtClaimKeys.Issuer];
+        public String Issuer => (String)ClaimsList[JwtClaimKeys.Issuer];
 
         /// <inheritdoc />
-        public string Audience => (string)ClaimsList[JwtClaimKeys.Audience];
+        public String Audience => (String)ClaimsList[JwtClaimKeys.Audience];
 
         /// <summary>
         /// Implementation of Json Web Token
         /// </summary>
-        /// <param name="expiresinSeconds">Token expires after in, in seconds</param>
+        /// <param name="expiresInSeconds">Token expires after in, in seconds</param>
         /// <param name="notBeforeSeconds">Cannot use token before, in seconds</param>
-        protected JsonWebToken(int expiresinSeconds = 1800, int notBeforeSeconds = 0)
+        protected JsonWebToken(Int32 expiresInSeconds = 1800, Int32 notBeforeSeconds = 0)
         {
-            BuildClaims("unknown", "unknown", expiresinSeconds, notBeforeSeconds);
+            BuildClaims("unknown", "unknown", expiresInSeconds, notBeforeSeconds);
         }
 
         /// <summary>
@@ -47,40 +47,40 @@ namespace Bit0.Utils.Security.Jwt
         /// </summary>
         /// <param name="issuer">Token Issuer</param>
         /// <param name="audience">Token Audience</param>
-        /// <param name="expiresinSeconds">Token expires after in, in seconds</param>
+        /// <param name="expiresInSeconds">Token expires after in, in seconds</param>
         /// <param name="notBeforeSeconds">Cannot use token before, in seconds</param>
-        protected JsonWebToken(string issuer, string audience, int expiresinSeconds = 1800, int notBeforeSeconds = 0)
+        protected JsonWebToken(String issuer, String audience, Int32 expiresInSeconds = 1800, Int32 notBeforeSeconds = 0)
         {
-            BuildClaims(issuer, audience, expiresinSeconds, notBeforeSeconds);
+            BuildClaims(issuer, audience, expiresInSeconds, notBeforeSeconds);
         }
 
         /// <summary>
         /// Implementation of Json Web Token
         /// </summary>
         /// <param name="claims"></param>
-        protected JsonWebToken(IDictionary<string, object> claims)
+        protected JsonWebToken(IDictionary<String, Object> claims)
         {
-            var issuer = (string) claims[JwtClaimKeys.Issuer];
-            var audience = (string) claims[JwtClaimKeys.Audience];
-            var issuedAt = (double)claims[JwtClaimKeys.IssuedAt];
+            var issuer = (String) claims[JwtClaimKeys.Issuer];
+            var audience = (String) claims[JwtClaimKeys.Audience];
+            var issuedAt = (Double)claims[JwtClaimKeys.IssuedAt];
 
-            var expireAt = (double)claims[JwtClaimKeys.Expiry];
-            var notBefore = (double)claims[JwtClaimKeys.NotBefore];
+            var expireAt = (Double)claims[JwtClaimKeys.Expiry];
+            var notBefore = (Double)claims[JwtClaimKeys.NotBefore];
 
             BuildClaims(issuer, audience, expireAt, notBefore, issuedAt);
         }
 
-        private void BuildClaims(string issuer, string audience, int expiresinSeconds, int notBeforeSeconds)
+        private void BuildClaims(String issuer, String audience, Int32 expiresInSeconds, Int32 notBeforeSeconds)
         {
             var issuedAt = DateTime.Now.ToUnixEpoch();
 
-            var expiresAt = DateTime.Now.AddSeconds(expiresinSeconds).ToUnixEpoch();
+            var expiresAt = DateTime.Now.AddSeconds(expiresInSeconds).ToUnixEpoch();
             var notBefore = DateTime.Now.AddSeconds(notBeforeSeconds).ToUnixEpoch();
 
             BuildClaims(issuer, audience, expiresAt, notBefore, issuedAt);
         }
 
-        private void BuildClaims(string issuer, string audience, double expiresAt, double notBefore, double issuedAt)
+        private void BuildClaims(String issuer, String audience, Double expiresAt, Double notBefore, Double issuedAt)
         {
             ClaimsList.Clear();
 

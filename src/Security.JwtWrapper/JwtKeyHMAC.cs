@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using Jose;
 
 namespace Bit0.Utils.Security.Jwt
@@ -13,17 +14,17 @@ namespace Bit0.Utils.Security.Jwt
         public JwsAlgorithm Algorithm { get; set; }
         
         /// <inheritdoc />
-        public object Key => SecretKey;
+        public Object Key => SecretKey;
         
         /// <inheritdoc />
-        public byte[] SecretKey { get; set; }
+        public Byte[] SecretKey { get; set; }
 
         /// <summary>
         /// JsonWebToken encryption key wrapper for HMAC
         /// </summary>
         /// <param name="key"></param>
         /// <param name="algo"></param>
-        public JwtKeyHMAC(string key, JwsAlgorithm algo = JwsAlgorithm.HS512)
+        public JwtKeyHMAC(String key, JwsAlgorithm algo = JwsAlgorithm.HS512)
         {
             Algorithm = algo;
             SecretKey = Encoding.UTF8.GetBytes(key);
@@ -34,7 +35,7 @@ namespace Bit0.Utils.Security.Jwt
         /// </summary>
         /// <param name="key"></param>
         /// <param name="algo"></param>
-        public JwtKeyHMAC(byte[] key, JwsAlgorithm algo = JwsAlgorithm.HS512)
+        public JwtKeyHMAC(Byte[] key, JwsAlgorithm algo = JwsAlgorithm.HS512)
         {
             Algorithm = algo;
             SecretKey = key;

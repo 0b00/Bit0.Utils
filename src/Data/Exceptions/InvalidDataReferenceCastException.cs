@@ -1,4 +1,5 @@
-﻿using Bit0.Utils.Common.Exceptions;
+﻿using System;
+using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.Data.Reference;
 
 namespace Bit0.Utils.Data.Exceptions
@@ -13,7 +14,7 @@ namespace Bit0.Utils.Data.Exceptions
         /// </summary>
         /// <param name="id">Original id</param>
         /// <param name="inner">Inner exception</param>
-        public InvalidDataReferenceCastException(string id, System.Exception inner = null)
+        public InvalidDataReferenceCastException(String id, System.Exception inner = null)
             : base($"Cannot convert '{id}' to {typeof(DataReference).Name}", 500, inner)
         { }
     }

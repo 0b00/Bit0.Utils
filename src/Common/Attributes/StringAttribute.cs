@@ -12,7 +12,7 @@ namespace Bit0.Utils.Common.Attributes
         /// Initialize a new instance of <see cref="StringAttribute"/> class
         /// </summary>
         /// <param name="value">String value of <see cref="Enum"/> field</param>
-        public StringAttribute(string value)
+        public StringAttribute(String value)
         {
             Value = value;
         }
@@ -20,6 +20,6 @@ namespace Bit0.Utils.Common.Attributes
         /// <summary>
         /// String value of <see cref="Enum"/> field
         /// </summary>
-        public string Value { get; set; }
+        public String Value { get; set; }
     }
 }

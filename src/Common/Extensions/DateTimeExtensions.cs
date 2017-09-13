@@ -12,7 +12,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="dateTime">Date to convert</param>
         /// <returns></returns>
-        public static double ToUnixEpoch(this DateTime dateTime)
+        public static Double ToUnixEpoch(this DateTime dateTime)
         {
             var unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return Math.Round((dateTime.ToUniversalTime() - unixEpoch).TotalSeconds);
@@ -23,7 +23,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="unixEpoch"></param>
         /// <returns></returns>
-        public static DateTime ToUtc(this double unixEpoch)
+        public static DateTime ToUtc(this Double unixEpoch)
         {
             var date = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return date.AddSeconds(unixEpoch);

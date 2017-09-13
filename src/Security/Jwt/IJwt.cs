@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Bit0.Utils.Security.Jwt
 {
@@ -10,32 +11,32 @@ namespace Bit0.Utils.Security.Jwt
         /// <summary>
         /// All claims
         /// </summary>
-        IDictionary<string, object> Claims { get; }
+        IDictionary<String, Object> Claims { get; }
 
         /// <summary>
         /// Expiry claim
         /// </summary>
-        double Expiry { get; }
+        Double Expiry { get; }
 
         /// <summary>
         /// Issued at claim
         /// </summary>
-        double IssuedAt { get; }
+        Double IssuedAt { get; }
 
         /// <summary>
         /// Not before claim
         /// </summary>
-        double NotBefore { get; }
+        Double NotBefore { get; }
 
         /// <summary>
         /// Issuer claim
         /// </summary>
-        string Issuer { get; }
+        String Issuer { get; }
 
         /// <summary>
         /// Audience claim
         /// </summary>
-        string Audience { get; }
+        String Audience { get; }
 
     }
 }

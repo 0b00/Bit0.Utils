@@ -23,7 +23,7 @@ namespace Bit0.Utils.Data.Providers
         /// <typeparam name="T">Element type to filter</typeparam>
         /// <param name="predicate">Filter</param>
         /// <returns></returns>
-        IEnumerable<T> List<T>(Func<T, bool> predicate) where T : IData;
+        IEnumerable<T> List<T>(Func<T, Boolean> predicate) where T : IData;
 
         /// <summary>
         /// Get a single entry by <paramref name="id"/> of type <typeparamref name="T"/>
@@ -67,6 +67,6 @@ namespace Bit0.Utils.Data.Providers
         /// Save changes to database, leave empty if not needed
         /// </summary>
         /// <param name="force">Force save</param>
-        void SaveChanges(bool force = false);
+        void SaveChanges(Boolean force = false);
     }
 }

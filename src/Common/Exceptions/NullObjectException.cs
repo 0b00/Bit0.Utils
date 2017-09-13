@@ -12,7 +12,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// </summary>
         /// <param name="obj">Payload</param>
         /// <param name="inner">Inner exception</param>
-        public NullObjectException(string obj, Exception inner = null)
+        public NullObjectException(String obj, Exception inner = null)
             : base($"Null object: {obj}", 500, inner)
         { }
     }

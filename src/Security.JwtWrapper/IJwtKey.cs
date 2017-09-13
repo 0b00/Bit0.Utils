@@ -1,4 +1,5 @@
-﻿using Jose;
+﻿using System;
+using Jose;
 
 namespace Bit0.Utils.Security.Jwt
 {
@@ -15,6 +16,6 @@ namespace Bit0.Utils.Security.Jwt
         /// <summary>
         /// Encryption key
         /// </summary>
-        object Key { get; }
+        Object Key { get; }
     }
 }

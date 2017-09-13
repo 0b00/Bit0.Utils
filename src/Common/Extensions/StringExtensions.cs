@@ -15,7 +15,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="s">Enum field value</param>
         /// <returns></returns>
-        public static string GetValue(this Enum s)
+        public static String GetValue(this Enum s)
         {
             return s.GetFieldAttribute<StringAttribute>().Value;
         }
@@ -31,7 +31,7 @@ namespace Bit0.Utils.Common.Extensions
         /// <returns>
         ///   <c>true</c> if the specified list contais the matching string; otherwise, <c>false</c>.
         /// </returns>
-        public static bool Contains(this IEnumerable<string> list, string value, bool ignoreCase = false)
+        public static Boolean Contains(this IEnumerable<String> list, String value, Boolean ignoreCase = false)
         {
             return ignoreCase ?
                 list.Any(s => s.Equals(value, StringComparison.OrdinalIgnoreCase)) :
@@ -44,9 +44,9 @@ namespace Bit0.Utils.Common.Extensions
         /// <param name="str">Pascal case</param>
         /// <param name="invariant"></param>
         /// <returns></returns>
-        public static string ToCamelCase(this string str, bool invariant = true)
+        public static String ToCamelCase(this String str, Boolean invariant = true)
         {
-            var chr = invariant ? char.ToLowerInvariant(str[0]) : char.ToLower(str[0]);
+            var chr = invariant ? Char.ToLowerInvariant(str[0]) : Char.ToLower(str[0]);
             str = chr + str.Substring(1);
 
             return str;

@@ -70,14 +70,14 @@ namespace Bit0.Utils.Data.Repositories
         /// <param name="predicate">Filter</param>
         /// <typeparam name="T">Element type</typeparam>
         /// <returns>Data from repository</returns>
-        IEnumerable<T> Find<T>(Func<T, bool> predicate) where T : IData;
+        IEnumerable<T> Find<T>(Func<T, Boolean> predicate) where T : IData;
 
         /// <summary>
         /// List data
         /// </summary>
         /// <param name="predicate">Filter</param>
         /// <returns></returns>
-        IEnumerable<TData> Find(Func<TData, bool> predicate);
+        IEnumerable<TData> Find(Func<TData, Boolean> predicate);
 
         /// <summary>
         /// Get data
@@ -85,14 +85,14 @@ namespace Bit0.Utils.Data.Repositories
         /// <param name="predicate">Filter</param>
         /// <typeparam name="T">Element type</typeparam>
         /// <returns>Data from repository</returns>
-        T FindOne<T>(Func<T, bool> predicate) where T : IData;
+        T FindOne<T>(Func<T, Boolean> predicate) where T : IData;
 
         /// <summary>
         /// Get Data
         /// </summary>
         /// <param name="predicate">Filter</param>
         /// <returns>Data from repository</returns>
-        TData FindOne(Func<TData, bool> predicate);
+        TData FindOne(Func<TData, Boolean> predicate);
 
         /// <summary>
         /// Get object by Id
@@ -100,14 +100,14 @@ namespace Bit0.Utils.Data.Repositories
         /// <typeparam name="T">Element type</typeparam>
         /// <param name="id">Id of object to fetch</param>
         /// <returns></returns>
-        T GetById<T>(string id) where T : IData;
+        T GetById<T>(String id) where T : IData;
 
         /// <summary>
         /// Get object by Id
         /// </summary>
         /// <param name="id"><see cref="DataReference"/> of object to fetch</param>
         /// <returns></returns>
-        TData GetById(string id);
+        TData GetById(String id);
 
 
         /// <summary>
@@ -131,6 +131,6 @@ namespace Bit0.Utils.Data.Repositories
         /// <typeparam name="T"></typeparam>
         /// <param name="id">Id to validate</param>
         /// <returns></returns>
-        DataReference ValidateId<T>(string id) where T : IData;
+        DataReference ValidateId<T>(String id) where T : IData;
     }
 }

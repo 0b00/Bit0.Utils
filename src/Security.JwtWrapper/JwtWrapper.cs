@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Bit0.Utils.Security.Jwt
 {
@@ -13,7 +14,7 @@ namespace Bit0.Utils.Security.Jwt
         /// <param name="payload"></param>
         /// <param name="jwtKey"></param>
         /// <returns></returns>
-        public static string Generate(IDictionary<string, object> payload, IJwtKey jwtKey)
+        public static String Generate(IDictionary<String, Object> payload, IJwtKey jwtKey)
         {
             var token = Jose.JWT.Encode(payload, jwtKey.Key, jwtKey.Algorithm);
             return token;
@@ -25,9 +26,9 @@ namespace Bit0.Utils.Security.Jwt
         /// <param name="token"></param>
         /// <param name="jwtKey"></param>
         /// <returns></returns>
-        public static IDictionary<string, object> Validate(string token, IJwtKey jwtKey)
+        public static IDictionary<String, Object> Validate(String token, IJwtKey jwtKey)
         {
-            var jwt = Jose.JWT.Decode<IDictionary<string, object>>(token, jwtKey.Key);
+            var jwt = Jose.JWT.Decode<IDictionary<String, Object>>(token, jwtKey.Key);
             jwt.ValidateDate(JwtClaimKeys.Expiry, "Access token has expired.");
             jwt.ValidateDate(JwtClaimKeys.IssuedAt, "Invalid access token.");
             jwt.ValidateDate(JwtClaimKeys.NotBefore, "Invalid access token, cannot use before {0}.");
@@ -40,9 +41,9 @@ namespace Bit0.Utils.Security.Jwt
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static IDictionary<string, object> Payload(string token)
+        public static IDictionary<String, Object> Payload(String token)
         {
-            return Jose.JWT.Payload<IDictionary<string, object>>(token);
+            return Jose.JWT.Payload<IDictionary<String, Object>>(token);
         }
 
     }

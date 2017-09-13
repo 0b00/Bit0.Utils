@@ -10,7 +10,7 @@ namespace Bit0.Utils.Data
         /// <summary>
         /// <see cref="IData"/> Id
         /// </summary>
-        string Id { get; set; }
+        String Id { get; set; }
 
         /// <summary>
         /// Created timestamp

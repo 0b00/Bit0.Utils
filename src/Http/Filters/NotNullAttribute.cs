@@ -23,7 +23,7 @@ namespace Bit0.Utils.Http.Filters
         /// </summary>
         /// <param name="value">Value to validate</param>
         /// <returns></returns>
-        public override bool IsValid(object value)
+        public override Boolean IsValid(Object value)
         {
             return value != null;
         }

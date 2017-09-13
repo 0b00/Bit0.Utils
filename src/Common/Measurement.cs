@@ -1,4 +1,6 @@
-﻿namespace Bit0.Utils.Common
+﻿using System;
+
+namespace Bit0.Utils.Common
 {
     /// <summary>
     /// Measurement
@@ -10,7 +12,7 @@
         /// </summary>
         /// <param name="unit">type</param>
         /// <param name="value">amount</param>
-        public Measurement(MeasurementUnit unit = MeasurementUnit.None, double value = 0)
+        public Measurement(MeasurementUnit unit = MeasurementUnit.None, Double value = 0)
         {
             Unit = unit;
             Value = value;
@@ -23,6 +25,6 @@
         /// <summary>
         /// Measurement amount
         /// </summary>
-        public double Value { get; set; }
+        public Double Value { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Bit0.Utils.Common
+﻿using System;
+
+namespace Bit0.Utils.Common
 {
     /// <summary>
     /// Money
@@ -12,14 +14,14 @@
         /// <summary>
         /// Amount
         /// </summary>
-        public double Amount { get; set; }
+        public Double Amount { get; set; }
         /// <summary>
         /// VAT
         /// </summary>
-        public int Vat { get; set; }
+        public Int32 Vat { get; set; }
         /// <summary>
         /// VAT included
         /// </summary>
-        public bool AmountHasVat { get; set; }
+        public Boolean AmountHasVat { get; set; }
     }
 }

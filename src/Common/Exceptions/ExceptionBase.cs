@@ -10,7 +10,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <summary>
         /// Status code
         /// </summary>
-        public int StatusCode { get; }
+        public Int32 StatusCode { get; }
         /// <summary>
         /// Exception payload
         /// </summary>
@@ -22,7 +22,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="data">Fail data</param>
         /// <param name="status">Fail status</param>
         /// <param name="inner">Inner exception</param>
-        protected ExceptionBase(object data, int status = 400, Exception inner = null)
+        protected ExceptionBase(Object data, Int32 status = 400, Exception inner = null)
             : this(data, status, status, inner)
         { }
 
@@ -33,7 +33,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="status">Fail status</param>
         /// <param name="innerStatus">Inner status</param>
         /// <param name="inner">Inner exception</param>
-        protected ExceptionBase(object data, int status = 400, int innerStatus = 400, Exception inner = null)
+        protected ExceptionBase(Object data, Int32 status = 400, Int32 innerStatus = 400, Exception inner = null)
             : base("Fail", inner)
         {
             StatusCode = status;
@@ -46,7 +46,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="message">Error message</param>
         /// <param name="status">Error status</param>
         /// <param name="inner">Inner exception</param>
-        protected ExceptionBase(string message, int status = 500, Exception inner = null)
+        protected ExceptionBase(String message, Int32 status = 500, Exception inner = null)
             : this(message, status, status, inner)
         { }
 
@@ -57,7 +57,7 @@ namespace Bit0.Utils.Common.Exceptions
         /// <param name="status">Error status</param>
         /// <param name="innerStatus">Inner status</param>
         /// <param name="inner">Inner exception</param>
-        protected ExceptionBase(string message, int status = 500, int innerStatus = 500, Exception inner = null)
+        protected ExceptionBase(String message, Int32 status = 500, Int32 innerStatus = 500, Exception inner = null)
             : base($"Error: {message}", inner)
         {
             StatusCode = status;

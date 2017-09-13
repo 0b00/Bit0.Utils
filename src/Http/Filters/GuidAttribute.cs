@@ -11,15 +11,15 @@ namespace Bit0.Utils.Http.Filters
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
     public class GuidAttribute : DataTypeAttribute
     {
-        private readonly bool _hasList;
-        private readonly bool _required;
+        private readonly Boolean _hasList;
+        private readonly Boolean _required;
 
         /// <summary>
         /// Validate value as Guid
         /// </summary>
         /// <param name="hasList">Part of a list?</param>
         /// <param name="required">Is requires?</param>
-        public GuidAttribute(bool hasList = false, bool required = true)
+        public GuidAttribute(Boolean hasList = false, Boolean required = true)
             : base("Guid")
         {
             _hasList = hasList;
@@ -33,14 +33,14 @@ namespace Bit0.Utils.Http.Filters
         /// </summary>
         /// <param name="value">Value to validate</param>
         /// <returns></returns>
-        public override bool IsValid(object value)
+        public override Boolean IsValid(Object value)
         {
 
             if (value == null) return !_required;
 
             return !_hasList
                 ? Guid.TryParse(value.ToString(), out Guid guid)
-                : ((IEnumerable<string>)value).Aggregate(true, (current, str) => current && Guid.TryParse(str, out guid));
+                : ((IEnumerable<String>)value).Aggregate(true, (current, str) => current && Guid.TryParse(str, out guid));
         }
 
         //protected override ValidationResult IsValid(object value, ValidationContext validationContext)

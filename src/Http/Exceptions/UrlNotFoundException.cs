@@ -13,7 +13,7 @@ namespace Bit0.Utils.Http.Exceptions
         /// </summary>
         /// <param name="url">Uri not found</param>
         /// <param name="inner">Inner exception</param>
-        public UrlNotFoundException(string url, Exception inner = null)
+        public UrlNotFoundException(String url, Exception inner = null)
             : base(new { route = url, message = "Page not found" }, 404, inner)
         { }
     }

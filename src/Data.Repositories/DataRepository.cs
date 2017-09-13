@@ -118,12 +118,12 @@ namespace Bit0.Utils.Data.Repositories
         /// </summary>
         /// <typeparam name="T">Element type</typeparam>
         /// <returns>Data from repository</returns>
-        public IEnumerable<T> Find<T>(Func<T, bool> predicate) where T : IData
+        public IEnumerable<T> Find<T>(Func<T, Boolean> predicate) where T : IData
         {
             return DataProvider.List(predicate);
         }
 
-        public IEnumerable<TData> Find(Func<TData, bool> predicate)
+        public IEnumerable<TData> Find(Func<TData, Boolean> predicate)
         {
             return Find<TData>(predicate);
         }
@@ -134,12 +134,12 @@ namespace Bit0.Utils.Data.Repositories
         /// <param name="predicate">Filter</param>
         /// <typeparam name="T">Element type</typeparam>
         /// <returns>Data from repository</returns>
-        public T FindOne<T>(Func<T, bool> predicate) where T : IData
+        public T FindOne<T>(Func<T, Boolean> predicate) where T : IData
         {
             return Find(predicate).SingleOrDefault();
         }
 
-        public TData FindOne(Func<TData, bool> predicate)
+        public TData FindOne(Func<TData, Boolean> predicate)
         {
             return FindOne<TData>(predicate);
         }
@@ -150,12 +150,12 @@ namespace Bit0.Utils.Data.Repositories
         /// <typeparam name="T">Element type</typeparam>
         /// <param name="id">Id of object to fetch</param>
         /// <returns></returns>
-        public T GetById<T>(string id) where T : IData
+        public T GetById<T>(String id) where T : IData
         {
             return GetById<T>(DataReference.Parse(id));
         }
 
-        public TData GetById(string id)
+        public TData GetById(String id)
         {
             return GetById<TData>(DataReference.Parse(id));
         }
@@ -179,7 +179,7 @@ namespace Bit0.Utils.Data.Repositories
             return GetById<TData>(id);
         }
 
-        public DataReference ValidateId<T>(string id) where T : IData
+        public DataReference ValidateId<T>(String id) where T : IData
         {
             var obj = GetById<T>(id);
             if (obj == null)

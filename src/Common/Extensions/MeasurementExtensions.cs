@@ -1,4 +1,5 @@
-﻿using Bit0.Utils.Common.Attributes;
+﻿using System;
+using Bit0.Utils.Common.Attributes;
 
 namespace Bit0.Utils.Common.Extensions
 {
@@ -12,7 +13,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="u"><see cref="MeasurementUnit"/> field value</param>
         /// <returns></returns>
-        public static string GetShortname(this MeasurementUnit u)
+        public static String GetShortname(this MeasurementUnit u)
         {
             return u.GetFieldAttribute<MeasurementUnitAttribute>().ShortName;
         }
@@ -32,7 +33,7 @@ namespace Bit0.Utils.Common.Extensions
         /// </summary>
         /// <param name="u"><see cref="MeasurementUnit"/> field value</param>
         /// <returns></returns>
-        public static double GetConversionFactor(this MeasurementUnit u)
+        public static Double GetConversionFactor(this MeasurementUnit u)
         {
             return u.GetFieldAttribute<MeasurementUnitAttribute>().ConversionFactor;
         }

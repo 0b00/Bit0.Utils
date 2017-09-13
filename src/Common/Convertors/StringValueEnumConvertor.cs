@@ -18,7 +18,7 @@ namespace Bit0.Utils.Common.Convertors
         /// <param name="writer">The Newtonsoft.Json.JsonWriter to write to.</param>
         /// <param name="value">The value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, Object value, JsonSerializer serializer)
         {
             if (value == null)
             {

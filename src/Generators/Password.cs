@@ -1,4 +1,6 @@
-﻿namespace Bit0.Utils.Generators
+﻿using System;
+
+namespace Bit0.Utils.Generators
 {
     /// <summary>
     /// Generate random password. Based on <seealso cref="RandomString"/>
@@ -13,7 +15,7 @@
         /// <param name="numbers">Include numbers</param>
         /// <param name="special">Include </param>
         /// <returns></returns>
-        public static string Generate(int length = 12, bool upper = true, bool numbers = true, bool special = true)
+        public static String Generate(Int32 length = 12, Boolean upper = true, Boolean numbers = true, Boolean special = true)
         {
             return RandomString.Generate(length, upper, numbers, special);
         }

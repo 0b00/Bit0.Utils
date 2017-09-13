@@ -11,21 +11,21 @@ namespace Bit0.Utils.Data.Reference
     {
         #region Public Methods
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType)
+        public override Boolean CanConvert(Type objectType)
         {
             return objectType == typeof(DataReference);
         }
 
         /// <inheritdoc />
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override Object ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
         {
-            var str = (string)reader.Value;
+            var str = (String)reader.Value;
 
             return DataReference.Parse(str);
         }
 
         /// <inheritdoc />
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, Object value, JsonSerializer serializer)
         {
             writer.WriteRawValue($"\"{((DataReference)value).Id}\"");
         }

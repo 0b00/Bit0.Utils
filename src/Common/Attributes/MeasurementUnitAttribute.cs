@@ -16,7 +16,7 @@ namespace Bit0.Utils.Common.Attributes
         /// <param name="shortName">Short name for <see cref="MeasurementUnit"/></param>
         /// <param name="factor">Conversion factor to <see cref="BaseUnit"/>of  <see cref="MeasurementUnit"/></param>
         /// <param name="baseunit">Base unit of  <see cref="MeasurementUnit"/></param>
-        public MeasurementUnitAttribute(string shortName, double factor = 1, MeasurementUnit baseunit = MeasurementUnit.None)
+        public MeasurementUnitAttribute(String shortName, Double factor = 1, MeasurementUnit baseunit = MeasurementUnit.None)
         {
             ShortName = shortName;
             ConversionFactor = factor;
@@ -26,12 +26,12 @@ namespace Bit0.Utils.Common.Attributes
         /// <summary>
         /// Short name for <see cref="MeasurementUnit"/>
         /// </summary>
-        public string ShortName { get; set; }
+        public String ShortName { get; set; }
 
         /// <summary>
         /// Conversion factor to <see cref="BaseUnit"/> of  <see cref="MeasurementUnit"/>
         /// </summary>
-        public double ConversionFactor { get; set; }
+        public Double ConversionFactor { get; set; }
 
         /// <summary>
         /// Base unit of  <see cref="MeasurementUnit"/>

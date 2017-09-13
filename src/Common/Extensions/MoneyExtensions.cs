@@ -1,11 +1,13 @@
-﻿namespace Bit0.Utils.Common.Extensions
+﻿using System;
+
+namespace Bit0.Utils.Common.Extensions
 {
     /// <summary>
     /// Money extensions
     /// </summary>
     public static class MoneyExtensions
     {
-        private static double GetVatValue(Money m)
+        private static Double GetVatValue(Money m)
         {
             return ((100.0 + m.Vat) / 100);
         }

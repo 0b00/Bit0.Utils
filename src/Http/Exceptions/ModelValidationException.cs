@@ -1,4 +1,5 @@
-﻿using Bit0.Utils.Common.Exceptions;
+﻿using System;
+using Bit0.Utils.Common.Exceptions;
 
 namespace Bit0.Utils.Http.Exceptions
 {
@@ -11,7 +12,7 @@ namespace Bit0.Utils.Http.Exceptions
         /// Model Validation Exception
         /// </summary>
         /// <param name="data">Payload</param>
-        public ModelValidationException(object data)
+        public ModelValidationException(Object data)
             : base(data, 400, 400)
         { }
     }

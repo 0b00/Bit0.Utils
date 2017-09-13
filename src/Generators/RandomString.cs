@@ -19,7 +19,7 @@ namespace Bit0.Utils.Generators
         /// <param name="numbers">Include numbers</param>
         /// <param name="special">Include special characters</param>
         /// <returns>A random string</returns>
-        public static string Generate(int length, bool upper, bool numbers, bool special)
+        public static String Generate(Int32 length, Boolean upper, Boolean numbers, Boolean special)
         {
             var len0 = Random.Next(1, 3 + 1);
             var len1 = special ? Random.Next(1, 2 + 1) : 0;
@@ -32,15 +32,15 @@ namespace Bit0.Utils.Generators
             var chars3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
             var chars4 = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
 
-            var data1 = new byte[len1];
-            var data2 = new byte[len2];
-            var data3 = new byte[len3];
-            var data4 = new byte[len4];
+            var data1 = new Byte[len1];
+            var data2 = new Byte[len2];
+            var data3 = new Byte[len3];
+            var data4 = new Byte[len4];
 
-            var result1 = new char[len1];
-            var result2 = new char[len2];
-            var result3 = new char[len3];
-            var result4 = new char[len4];
+            var result1 = new Char[len1];
+            var result2 = new Char[len2];
+            var result3 = new Char[len3];
+            var result4 = new Char[len4];
 
             NumberGenerator.GetBytes(data1);
             NumberGenerator.GetBytes(data2);
@@ -64,9 +64,9 @@ namespace Bit0.Utils.Generators
                 result4[i] = chars4[data4[i] % (chars4.Length)];
             }
 
-            var part1 = new string(result1);
-            var part2 = new string(result2);
-            var part3 = new string(result3) + new string(result4);
+            var part1 = new String(result1);
+            var part2 = new String(result2);
+            var part3 = new String(result3) + new String(result4);
 
             var key = part3.Substring(0, len0) + part2 + part3.Substring(len0, len0) + part1 + part3.Substring(len0 * 2, (len3 + len4) - (len0 * 2));
 
