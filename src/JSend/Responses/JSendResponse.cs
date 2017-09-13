@@ -1,4 +1,5 @@
-﻿using Bit0.Utils.Common.Extensions;
+﻿using System;
+using Bit0.Utils.Common.Extensions;
 using Bit0.Utils.JSend.Common;
 using Newtonsoft.Json;
 
@@ -7,7 +8,7 @@ namespace Bit0.Utils.JSend.Responses
     /// <summary>
     /// JSend Response base
     /// </summary>
-    public class JSendResponse : JSendResponse<object>
+    public class JSendResponse : JSendResponse<Object>
     { }
 
     /// <summary>
@@ -26,7 +27,7 @@ namespace Bit0.Utils.JSend.Responses
         /// JSend status as string
         /// </summary>
         [JsonProperty("status")]
-        public string StringStatus => Status.GetValue();
+        public String StringStatus => Status.GetValue();
 
         /// <summary>
         /// JSend status code
@@ -38,7 +39,7 @@ namespace Bit0.Utils.JSend.Responses
         /// JSend error message
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public string Message { get; set; }
+        public String Message { get; set; }
 
         /// <summary>
         /// JSend payload

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Common\Common.csproj" />
+    <ProjectReference Include="..\..\src\Data.Providers\Data.Providers.csproj" />
+    <ProjectReference Include="..\..\src\Data.Repositories\Data.Repositories.csproj" />
+    <ProjectReference Include="..\..\src\Data\Data.csproj" />
+    <ProjectReference Include="..\..\src\Generators\Generators.csproj" />
+    <ProjectReference Include="..\..\src\Http\Http.csproj" />
+    <ProjectReference Include="..\..\src\JSend.Http\JSend.Http.csproj" />
+    <ProjectReference Include="..\..\src\JSend\JSend.csproj" />
+    <ProjectReference Include="..\..\src\Security.JwtWrapper\Security.JwtWrapper.csproj" />
+    <ProjectReference Include="..\..\src\Security\Security.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

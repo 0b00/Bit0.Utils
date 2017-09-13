@@ -19,7 +19,7 @@ namespace Bit0.Utils.JSend.Responses
         /// Exception stack
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string StackTrace => Exception?.StackTrace;
+        public String StackTrace => Exception?.StackTrace;
 
         /// <summary>
         /// JSend error response
@@ -28,7 +28,7 @@ namespace Bit0.Utils.JSend.Responses
         /// <param name="code">Http status code</param>
         /// <param name="internalCode">Internal application code</param>
         /// <param name="exception">Exception</param>
-        public ErrorResponse(string message, int code, int internalCode, Exception exception)
+        public ErrorResponse(String message, Int32 code, Int32 internalCode, Exception exception)
         {
             Status = JSendStatus.Error;
             StatusCode = new JSendStatusCode(code, internalCode);
@@ -42,7 +42,7 @@ namespace Bit0.Utils.JSend.Responses
         /// <param name="message">Error message</param>
         /// <param name="code">Http status code</param>
         /// <param name="internalCode">Internal application code</param>
-        public ErrorResponse(string message, int code, int internalCode)
+        public ErrorResponse(String message, Int32 code, Int32 internalCode)
         {
             Status = JSendStatus.Error;
             StatusCode = new JSendStatusCode(code, internalCode);
@@ -54,7 +54,7 @@ namespace Bit0.Utils.JSend.Responses
         /// </summary>
         /// <param name="message">Error message</param>
         /// <param name="exception">Exception</param>
-        public ErrorResponse(string message, Exception exception)
+        public ErrorResponse(String message, Exception exception)
             : this(message, 500, 500, exception)
         { }
 
@@ -64,7 +64,7 @@ namespace Bit0.Utils.JSend.Responses
         /// <param name="message">Error message</param>
         /// <param name="internalCode">Internal application code</param>
         /// <param name="exception">Exception</param>
-        public ErrorResponse(string message, int internalCode, Exception exception)
+        public ErrorResponse(String message, Int32 internalCode, Exception exception)
             : this(message, 500, internalCode, exception)
         { }
     }
