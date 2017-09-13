@@ -2,9 +2,9 @@ using System;
 using Bit0.Utils.JSend.Responses;
 using Xunit;
 
-namespace Tests
+namespace Bit0.Utils.Tests.JSend.Responses
 {
-    public class JSendTests
+    public class JSendResponsesTests
     {
         [Fact]
         public void ErrorResponse()
