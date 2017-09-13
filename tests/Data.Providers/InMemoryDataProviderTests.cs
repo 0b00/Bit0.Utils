@@ -22,7 +22,12 @@ namespace Bit0.Utils.Tests.Data.Providers
         {
             _dataProvider.SaveChanges();
 
-            Assert.True(true);
+            var ex = new InMemoryDataProviderEx();
+            ex.Load();
+
+            var data = ex.List<IData>(x => true).ToList();
+
+            Assert.Equal(0, data.Count);
         }
 
         [Fact]
@@ -214,7 +219,15 @@ namespace Bit0.Utils.Tests.Data.Providers
 
             Assert.NotNull(rid);
             Assert.False(DataReference.IsEmptyOrNull(rid));
-            Assert.Equal<string>(id, rid);
+            Assert.Equal<String>(id, rid);
+        }
+
+        private class InMemoryDataProviderEx : InMemoryDataProvider
+        {
+            public void Load()
+            {
+                LoadData();
+            }
         }
     }
 }
