@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Bit0.Utils.Common.Comparer;
 using Xunit;
 
@@ -8,8 +6,8 @@ namespace Bit0.Utils.Tests.Common.Comparer
 {
     public class StringContainsComparerTests
     {
-        private readonly string _str1;
-        private readonly string _str2;
+        private readonly String _str1;
+        private readonly String _str2;
         private readonly StringContainsComparer _comparer;
 
         public StringContainsComparerTests()

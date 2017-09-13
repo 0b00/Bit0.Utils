@@ -51,7 +51,7 @@ namespace Bit0.Utils.Tests.Data.Reference
             Assert.NotNull(id.Id);
             Assert.Equal(id.Id, id);
 
-            string str = id;
+            String str = id;
             Assert.Equal(id.ToString(), str);
         }
         
@@ -113,7 +113,7 @@ namespace Bit0.Utils.Tests.Data.Reference
             var guid = Guid.NewGuid();
             DataReference id = guid;
 
-            object id2 = (DataReference) guid;
+            Object id2 = (DataReference) guid;
 
             Assert.True(id.Equals(id2));
         }

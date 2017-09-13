@@ -11,7 +11,7 @@ namespace Bit0.Utils.Tests.Common.Exceptions
         [Fact]
         public void ArgumentMissingException()
         {
-            string arg;
+            String arg;
 
             var ex = Assert.ThrowsAsync<ArgumentMissingException>(() => throw new ArgumentMissingException(nameof(arg), new Exception("Test1"))).Result;
 
@@ -22,7 +22,7 @@ namespace Bit0.Utils.Tests.Common.Exceptions
         [Fact]
         public void ExceptionResponce()
         {
-            string arg;
+            String arg;
 
             var ex = Assert.ThrowsAsync<ArgumentMissingException>(() => throw new ArgumentMissingException(nameof(arg), new Exception("Test1"))).Result;
 
@@ -53,8 +53,8 @@ namespace Bit0.Utils.Tests.Common.Exceptions
         [Fact]
         public void InvalidObjectTypeException()
         {
-            var expected = typeof(string);
-            var got = typeof(int);
+            var expected = typeof(String);
+            var got = typeof(Int32);
             var ex = Assert.ThrowsAsync<InvalidObjectTypeException>(() => throw new InvalidObjectTypeException(expected, got)).Result;
             
             Assert.Equal(500, ex.StatusCode);
@@ -64,16 +64,16 @@ namespace Bit0.Utils.Tests.Common.Exceptions
         [Fact]
         public void KeyMissingException()
         {
-            var keyType = typeof(string);
+            var keyType = typeof(String);
             var key = "arg";
             var ex = Assert.ThrowsAsync<KeyMissingException>(() => throw new KeyMissingException(keyType, key)).Result;
 
             dynamic data = JObject.Parse(JsonConvert.SerializeObject(ex.ResponseObject.Data));
 
             Assert.Equal(404, ex.StatusCode);
-            Assert.Equal($"{keyType.Name} not found: {key}", data.message.Value as string);
-            Assert.Equal(keyType.FullName, data.keyType.Value as string);
-            Assert.Equal(key, data.key.Value as string);
+            Assert.Equal($"{keyType.Name} not found: {key}", data.message.Value as String);
+            Assert.Equal(keyType.FullName, data.keyType.Value as String);
+            Assert.Equal(key, data.key.Value as String);
 
             var ex1 = Assert.ThrowsAsync<KeyMissingException>(() => throw new KeyMissingException(key)).Result;
             

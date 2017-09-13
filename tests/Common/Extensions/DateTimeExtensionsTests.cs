@@ -11,8 +11,8 @@ namespace Bit0.Utils.Tests.Common.Extensions
         {
             //2017-04-27T15:59:12.0000000+02:00
 
-            var utc = ((double) 1493301552).ToUtc();
-            var local = ((double) 1493301552).ToUtc().ToLocalTime();
+            var utc = ((Double) 1493301552).ToUtc();
+            var local = ((Double) 1493301552).ToUtc().ToLocalTime();
             var expected = DateTime.ParseExact("2017-04-27T13:59:12.0000000Z", "o", null);
 
 

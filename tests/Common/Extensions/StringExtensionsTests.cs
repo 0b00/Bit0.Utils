@@ -1,4 +1,5 @@
-﻿using Bit0.Utils.Common.Attributes;
+﻿using System;
+using Bit0.Utils.Common.Attributes;
 using Bit0.Utils.Common.Extensions;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Bit0.Utils.Tests.Common.Extensions
         [Fact]
         public void Contains()
         {
-            var list = new List<string>
+            var list = new List<String>
             {
                 "Item1",
                 "Item2",
