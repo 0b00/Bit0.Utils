@@ -2,7 +2,7 @@
 
   <Target Name="VSTest">
     <ItemGroup>
-      <TestProjects Include="$(MSBuildThisFileDirectory)tests\Generators\Generators.csproj" />
+      <TestProjects Include="$(MSBuildThisFileDirectory)tests\**\*.csproj" />
     </ItemGroup>
     <MSBuild Projects="@(TestProjects)" Targets="VSTest" Properties="VSTestNoBuild=true" ContinueOnError="ErrorAndContinue"/>
   </Target>

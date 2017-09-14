@@ -243,4 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+#Project
 /.axoCover/settings.json
+/Coverage.xml

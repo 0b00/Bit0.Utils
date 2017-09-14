@@ -1,2 +1,2 @@
 @echo off
-dotnet build -v m
+dotnet build Bit.Utils.sln -v m
