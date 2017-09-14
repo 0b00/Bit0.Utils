@@ -6,7 +6,7 @@ namespace Bit0.Utils.JSend.Responses
     /// <summary>
     /// JSend success response
     /// </summary>
-    public class SuccessResponse : SuccessResponse<Object>
+    public class SuccessResponse : JSendResponse
     {
         /// <summary>
         /// JSend success response
@@ -15,8 +15,10 @@ namespace Bit0.Utils.JSend.Responses
         /// <param name="code">Http status code</param>
         /// <param name="internalCode">Internal application code</param>
         public SuccessResponse(Object data, Int32 code, Int32 internalCode)
-            : base(data, code, internalCode)
-        { }
+        {
+            StatusCode = new JSendStatusCode(code, internalCode);
+            Data = data;
+        }
 
 
         /// <summary>

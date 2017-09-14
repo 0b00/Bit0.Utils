@@ -1,5 +1,7 @@
 using System;
+using Bit0.Utils.JSend.Extensions;
 using Bit0.Utils.JSend.Responses;
+using Newtonsoft.Json;
 using Xunit;
 
 namespace Bit0.Utils.Tests.JSend.Responses
@@ -120,6 +122,23 @@ namespace Bit0.Utils.Tests.JSend.Responses
             Assert.Equal(data, fail4.Data);
             Assert.Equal(status, fail4.StatusCode.Code);
             Assert.Equal(innerStatus, fail4.StatusCode.InternalCode);
+        }
+
+        [Fact]
+        public void Json()
+        {
+            var data = new Data
+            {
+                Prop1 = "a",
+                Prop2 = 1
+            };
+
+            var success = new SuccessResponse(data);
+
+            var json = JsonConvert.SerializeObject(success);
+            var res = success.ToJson();
+
+            Assert.Equal(json, res);
         }
     }
 
