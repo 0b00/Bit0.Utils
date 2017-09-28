@@ -25,9 +25,9 @@ namespace Bit0.Utils.Tests.Data.Providers
             var ex = new InMemoryDataProviderEx();
             ex.Load();
 
-            var data = ex.List<IData>(x => true).ToList();
+            var data = ex.List<IData>(x => true);
 
-            Assert.Equal(0, data.Count);
+            Assert.Equal(0, data.Count());
         }
 
         [Fact]
@@ -205,7 +205,7 @@ namespace Bit0.Utils.Tests.Data.Providers
         }
 
         [Fact]
-        public void AddwithId()
+        public void AddWithId()
         {
             var id = DataReference.NewIdentity();
             var user = new User

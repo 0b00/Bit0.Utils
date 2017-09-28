@@ -13,5 +13,6 @@ namespace Bit0.Utils.Tests.Data.Providers
 
         public String Username { get; set; }
         public String Password { get; set; }
+        public String Address { get; set; }
     }
 }

@@ -41,9 +41,9 @@ namespace Bit0.Utils.Tests.Common.Exceptions
         }
 
         [Fact]
-        public void InvalidCredentialsException()
+        public async void InvalidCredentialsException()
         {
-            var ex = Assert.ThrowsAsync<InvalidCredentialsException>(() => throw new InvalidCredentialsException(new { val = "Test1" })).Result;
+            var ex = await Assert.ThrowsAsync<InvalidCredentialsException>(() => throw new InvalidCredentialsException(new { val = "Test1" }));
             
             Assert.Equal(403, ex.StatusCode);
             Assert.NotNull(ex.Data);
