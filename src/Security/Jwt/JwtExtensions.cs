@@ -29,11 +29,6 @@ namespace Bit0.Utils.Security.Jwt
                 throw new InvalidCredentialsException(new { message = "Invalid access token." }, ex);
             }
 
-            if (Math.Abs(epoch) <= 0)
-            {
-                throw new InvalidCredentialsException(new { message = "Invalid access token." });
-            }
-
             if (key == JwtClaimKeys.Expiry ? epoch.ToUtc() <= DateTime.UtcNow : epoch.ToUtc() > DateTime.UtcNow)
             {
                 throw new InvalidCredentialsException(new { message = String.Format(errorMessage, epoch.ToUtc().ToString("u")) });

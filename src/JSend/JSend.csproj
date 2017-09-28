@@ -17,6 +17,7 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>Bit0.Utils.JSend</RootNamespace>
     <Version>1.2.1</Version>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

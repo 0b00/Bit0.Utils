@@ -19,6 +19,7 @@
     <RootNamespace>Bit0.Utils.JSend.Http</RootNamespace>
     <Version>0.9.5</Version>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

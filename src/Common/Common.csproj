@@ -21,6 +21,7 @@
     <AssemblyVersion>0.9.4.0</AssemblyVersion>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <FileVersion>0.9.4.0</FileVersion>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

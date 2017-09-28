@@ -182,11 +182,6 @@ namespace Bit0.Utils.Data.Repositories
         public DataReference ValidateId<T>(String id) where T : IData
         {
             var obj = GetById<T>(id);
-            if (obj == null)
-            {
-                throw new KeyMissingException(typeof(T), id);
-            }
-
             return obj.Id;
         }
     }

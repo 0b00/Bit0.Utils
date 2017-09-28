@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-using Bit0.Utils.Common.Exceptions;
+﻿using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.Http.Exceptions;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System;
+using System.Linq;
 
 namespace Bit0.Utils.Http.Filters
 {

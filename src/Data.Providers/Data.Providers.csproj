@@ -13,6 +13,7 @@
     <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils/</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-win+net45+wp8+win81+wpa8;net45;net46;net461;portable-net45+win8+wpa81+wp8</PackageTargetFallback>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

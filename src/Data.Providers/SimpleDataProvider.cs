@@ -12,10 +12,16 @@ namespace Bit0.Utils.Data.Providers
     /// </summary>
     public class SimpleDataProvider : InMemoryDataProvider
     {
+        #region Protected Fields
+        /// <summary>
+        /// Storeage file
+        /// </summary>
+        protected readonly String StorageFilePath;
+        #endregion
+
         #region Private Fields
 
         private readonly Int32 _maxTransBeforeWrite;
-        protected readonly FileInfo _storageFile;
         private Int32 _operationsCount;
         private readonly JsonSerializerSettings _jsonSettings;
 
@@ -30,7 +36,7 @@ namespace Bit0.Utils.Data.Providers
         /// </summary>
         /// <param name="maxTransBeforeWrite">Wait max saves before writing to file</param>
         /// <param name="storageFile">Storage file</param>
-        public SimpleDataProvider(Int32 maxTransBeforeWrite = 1, FileInfo storageFile = null)
+        public SimpleDataProvider(Int32 maxTransBeforeWrite = 1, String storageFile = null)
         {
             _jsonSettings = new JsonSerializerSettings
             {
@@ -41,7 +47,9 @@ namespace Bit0.Utils.Data.Providers
 
             _maxTransBeforeWrite = maxTransBeforeWrite >= 1 ? maxTransBeforeWrite : 1;
 
-            _storageFile = storageFile ?? new FileInfo("SimpleDataProvider.Data.json");
+            StorageFilePath = !String.IsNullOrWhiteSpace(storageFile)
+                ? storageFile
+                : $"{nameof(SimpleDataProvider)}.Data.json";
             LoadData();
         }
 
@@ -57,11 +65,13 @@ namespace Bit0.Utils.Data.Providers
         {
             DataList.Clear();
 
-            if (_storageFile.Exists && _storageFile.Length > 20)
+            var storageFile = new FileInfo(StorageFilePath);
+
+            if (storageFile.Exists && StorageFilePath.Length > 20)
             {
 
                 IDictionary<String, IData> list;
-                using (var sr = _storageFile.OpenText())
+                using (var sr = storageFile.OpenText())
                 {
                     var str = sr.ReadToEnd();
                     list = JsonConvert.DeserializeObject<IDictionary<String, IData>>(str, _jsonSettings);
@@ -85,19 +95,29 @@ namespace Bit0.Utils.Data.Providers
         {
             if (_operationsCount % _maxTransBeforeWrite == 0 || force)
             {
-                Task.Run(() =>
-                {
-                    using (var sw = _storageFile.CreateText())
-                    {
-                        sw.Write(JsonConvert.SerializeObject(DataList, _jsonSettings));
-
-                        //_serializer.Serialize(sw, DataList);
-                    }
-                });
+                SaveChangesAsync();
                 _operationsCount = 0;
             }
 
             _operationsCount++;
+        }
+
+        /// <summary>
+        /// Save data to file
+        /// </summary>
+        public Task SaveChangesAsync()
+        {
+            return Task.Run(() =>
+            {
+                var storageFile = new FileInfo(StorageFilePath);
+
+                using (var sw = storageFile.CreateText())
+                {
+                    sw.Write(JsonConvert.SerializeObject(DataList, _jsonSettings));
+
+                    //_serializer.Serialize(sw, DataList);
+                }
+            });
         }
 
         #endregion Public Methods

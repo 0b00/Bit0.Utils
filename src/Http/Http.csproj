@@ -19,6 +19,7 @@
     <RootNamespace>Bit0.Utils.Http</RootNamespace>
     <Version>0.7.4</Version>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
