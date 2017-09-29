@@ -1,4 +1,4 @@
-# Bit0.Utils
+# Bit0.Utils [![Coverage Status](https://coveralls.io/repos/github/b1thunt3r/Bit0.Utils/badge.svg?branch=master)](https://coveralls.io/github/b1thunt3r/Bit0.Utils?branch=master)
 Small utilites for .net core
 
 ## Utilities
