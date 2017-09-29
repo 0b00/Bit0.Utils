@@ -73,7 +73,7 @@ namespace Bit0.Utils.Tests.Security.Jwt
         public void Test4()
         {
 
-            var date = DateTime.Now;
+            var date = DateTime.UtcNow;
             var claims = new Dictionary<String, Object>
             {
                 { JwtClaimKeys.Audience, "audience" },
@@ -84,19 +84,19 @@ namespace Bit0.Utils.Tests.Security.Jwt
 
             Assert.Throws<InvalidCredentialsException>(() =>
             {
-                claims.ValidateDate(JwtClaimKeys.Audience, "{0}");
+                claims.ValidateDate(JwtClaimKeys.Audience, "{0}", date);
             });
 
-            claims.ValidateDate(JwtClaimKeys.IssuedAt, "{0}");
+            claims.ValidateDate(JwtClaimKeys.IssuedAt, "{0}", date);
 
             Assert.Throws<InvalidCredentialsException>(() =>
             {
-                claims.ValidateDate(JwtClaimKeys.Expiry, "{0}");
+                claims.ValidateDate(JwtClaimKeys.Expiry, "{0}", date);
             });
 
             Assert.Throws<InvalidCredentialsException>(() =>
             {
-                claims.ValidateDate(JwtClaimKeys.NotBefore, "{0}");
+                claims.ValidateDate(JwtClaimKeys.NotBefore, "{0}", date);
             });
         }
     }

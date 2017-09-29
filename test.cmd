@@ -1,2 +1,2 @@
 @echo off
-dotnet test .\tests\Tests\Tests.csproj --no-build -v m
+dotnet test .\tests\Tests\Tests.csproj -v m

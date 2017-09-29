@@ -25,16 +25,16 @@ namespace Bit0.Utils.Tests.Security.Jwt
             _jwtKey = new JwtKeyHMAC("test");
         }
 
-        [Fact]
+        [Theory]
+        [InlineData(200)]
+        [InlineData(0)]
+        [InlineData(-200)]
         public void NotBeforeTests(Int32 notBeforeSeconds)
         {
-            var payload = new Jwt1(notBeforeSeconds: -200).Claims;
+            var payload = new Jwt1(notBeforeSeconds: notBeforeSeconds).Claims;
             var jwt = JwtWrapper.Generate(payload, _jwtKey);
 
-            var actual = Assert.Throws<InvalidCredentialsException>(() =>
-            {
-                JwtWrapper.Validate(jwt, _jwtKey);
-            });
+            JwtWrapper.Validate(jwt, _jwtKey);
         }
 
         [Fact]
