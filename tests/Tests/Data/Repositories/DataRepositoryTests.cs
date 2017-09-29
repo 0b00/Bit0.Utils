@@ -89,6 +89,8 @@ namespace Bit0.Utils.Tests.Data.Repositories
             Assert.NotEmpty(rUsers);
             Assert.Equal(users.Count, rUsers.Count);
             Assert.Equal(users, rUsers);
+
+            _repository.Save((IEnumerable<IData>) null);
         }
 
         [Fact]

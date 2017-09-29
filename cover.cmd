@@ -36,7 +36,7 @@ REM Generate the report
 %reportgenerator% -targetdir:%reportdir% -reporttypes:%reporttypes% -reports:%coveragefile% -historydir:"%historydir%" -verbosity:Error
 
 copy %coveragefile% cover.xml
-%coveralls% --opencover -i cover.xml --repoToken %coverallsToken%
+::%coveralls% --opencover -i cover.xml --repoToken %coverallsToken%
 del cover.xml
 
 REM Open the report  

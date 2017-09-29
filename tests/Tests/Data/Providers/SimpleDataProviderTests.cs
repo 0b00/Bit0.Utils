@@ -16,7 +16,7 @@ namespace Bit0.Utils.Tests.Data.Providers
             var file = new FileInfo($"{nameof(SimpleDataProviderTests)}.{Guid.NewGuid()}.Data.json").FullName;
             
 
-            IDataProvider dataProvider = new SimpleDataProvider(20, file);
+            IDataProvider dataProvider = new SimpleDataProvider(1, file);
 
             var user = new User
             {

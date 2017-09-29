@@ -16,6 +16,7 @@ namespace Bit0.Utils.Tests.JSend.Responses
             const Int32 innerStatus = 400;
             var ex = new ArgumentNullException();
 
+
             var error1 = new ErrorResponse(str, status, innerStatus);
             var error2 = new ErrorResponse(str, status, innerStatus, ex);
             var error3 = new ErrorResponse(str, innerStatus, ex);
@@ -25,6 +26,7 @@ namespace Bit0.Utils.Tests.JSend.Responses
             Assert.Equal(status, error1.StatusCode.Code);
             Assert.Equal(innerStatus, error1.StatusCode.InternalCode);
             Assert.Null(error1.Exception);
+            Assert.Null(error1.StackTrace);
             Assert.Equal("error", error1.StringStatus);
 
             Assert.Equal(str, error2.Message);
