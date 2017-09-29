@@ -25,10 +25,8 @@ namespace Bit0.Utils.Security.Jwt
         /// <param name="key"></param>
         /// <param name="algo"></param>
         public JwtKeyHMAC(String key, JwsAlgorithm algo = JwsAlgorithm.HS512)
-        {
-            Algorithm = algo;
-            SecretKey = Encoding.UTF8.GetBytes(key);
-        }
+            : this(Encoding.UTF8.GetBytes(key), algo)
+        { }
 
         /// <summary>
         /// JsonWebToken encryption key wrapper for HMAC

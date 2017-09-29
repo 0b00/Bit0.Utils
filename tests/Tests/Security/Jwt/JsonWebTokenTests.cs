@@ -10,24 +10,24 @@ namespace Bit0.Utils.Tests.Security.Jwt
 {
     public class JsonWebTokenTests
     {
-        public class Jwt1 : JsonWebToken
+        public class JwtTest : JsonWebToken
         {
             public override IDictionary<String, Object> Claims => ClaimsList;
 
-            public Jwt1() : base(expiresInSeconds: 1800, notBeforeSeconds: 20)
+            public JwtTest() : base(expiresInSeconds: 1800, notBeforeSeconds: 20)
             { }
 
-            public Jwt1(String issuer, String audience) : base(issuer, audience, expiresInSeconds: 1800, notBeforeSeconds: 20)
+            public JwtTest(String issuer, String audience) : base(issuer, audience, expiresInSeconds: 1800, notBeforeSeconds: 20)
             { }
 
-            public Jwt1(IDictionary<String, Object> claims) : base(claims)
+            public JwtTest(IDictionary<String, Object> claims) : base(claims)
             { }
         }
 
         [Fact]
         public void Test1()
         {
-            var jwt = new Jwt1();
+            var jwt = new JwtTest();
             var date = DateTime.Now;
 
             Assert.Equal("unknown", jwt.Issuer);
@@ -40,7 +40,7 @@ namespace Bit0.Utils.Tests.Security.Jwt
         [Fact]
         public void Test2()
         {
-            var jwt = new Jwt1("issuer", "audience");
+            var jwt = new JwtTest("issuer", "audience");
             var date = DateTime.Now;
 
             Assert.Equal("issuer", jwt.Issuer);
@@ -60,7 +60,7 @@ namespace Bit0.Utils.Tests.Security.Jwt
                 { JwtClaimKeys.NotBefore, date.AddSeconds(20).ToUnixEpoch() },
             };
 
-            var jwt = new Jwt1(claims);
+            var jwt = new JwtTest(claims);
 
             Assert.Equal(claims[JwtClaimKeys.Issuer], jwt.Issuer);
             Assert.Equal(claims[JwtClaimKeys.Audience], jwt.Audience);
