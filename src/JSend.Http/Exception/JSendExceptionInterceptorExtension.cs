@@ -15,11 +15,6 @@ namespace Bit0.Utils.JSend.Http.Exception
         /// <returns>A reference to the <paramref name="app"/> after the operation has completed.</returns>
         public static IApplicationBuilder UseJSendExceptionInterceptor(this IApplicationBuilder app)
         {
-            if (app == null)
-            {
-                throw new ArgumentNullException(nameof(app));
-            }
-
             return app.UseMiddleware<JSendExceptionInterceptor>();
         }
     }
