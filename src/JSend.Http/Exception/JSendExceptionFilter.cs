@@ -13,22 +13,6 @@ namespace Bit0.Utils.JSend.Http.Exception
     /// </summary>
     public class JSendExceptionFilter : ExceptionFilterAttribute
     {
-        private readonly ILogger _logger;
-
-        /// <summary>
-        /// JSend Exception Filter
-        /// </summary>
-        /// <param name="loggerFactory">Logger factory</param>
-        public JSendExceptionFilter(ILoggerFactory loggerFactory)
-        {
-            if (loggerFactory == null)
-            {
-                throw new ArgumentNullException(nameof(loggerFactory));
-            }
-
-            _logger = loggerFactory.CreateLogger(GetType());
-        }
-
         /// <summary>
         /// Execute on exception
         /// </summary>
@@ -54,8 +38,6 @@ namespace Bit0.Utils.JSend.Http.Exception
             }
             context.Result = jsonResult;
             context.HttpContext.Response.ContentType = "application/json";
-
-            _logger.LogError(context.Exception.Message, context.Exception);
 
             base.OnException(context);
         }
