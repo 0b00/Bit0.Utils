@@ -1,28 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
-    <Description>Generators for .net core by Bit0</Description>
-    <AssemblyTitle>Generators by Bit0</AssemblyTitle>
-    <VersionPrefix>1.0.1</VersionPrefix>
-    <Authors>b1thunt3r</Authors>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>Bit0.Utils.Generators</AssemblyName>
-    <PackageId>Bit0.Utils.Generators</PackageId>
-    <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-win+net45+wp8+win81+wpa8;net45;net46;net461;portable-net45+win8+wpa81+wp8</PackageTargetFallback>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>Bit0.Utils.Generators</RootNamespace>
+    <AssemblyTitle>Generators</AssemblyTitle>
     <Version>1.0.4</Version>
-    <DebugType>Full</DebugType>
+    <RootNamespace>Bit0.Utils.</RootNamespace>
   </PropertyGroup>
   
-  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
-  </Target>-->
-
 </Project>

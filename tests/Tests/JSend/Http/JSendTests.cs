@@ -94,7 +94,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         }
 
         [Fact]
-        public async void Test5()
+        public void Test5()
         {
             Assert.Throws<AggregateException>(() =>
             {

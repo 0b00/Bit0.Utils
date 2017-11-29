@@ -1,36 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
-    <Description>Common utils for .net core by Bit0</Description>
-    <AssemblyTitle>Common Utils by Bit0</AssemblyTitle>
-    <VersionPrefix>0.8.5</VersionPrefix>
-    <Authors>b1thunt3r</Authors>
-    <TargetFrameworks>netstandard1.6</TargetFrameworks>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>Bit0.Utils.Common</AssemblyName>
-    <PackageId>Bit0.Utils.Common</PackageId>
-    <PackageProjectUrl>https://github.com/b1thunt3r/Bit0.Utils</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/b1thunt3r/Bit0.Utils/blob/master/LICENSE.md</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-win+net45+wp8+win81+wpa8;net45;net46;net461;portable-net45+win8+wpa81+wp8</PackageTargetFallback>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>Bit0.Utils.Common</RootNamespace>
+    <AssemblyTitle>Common</AssemblyTitle>
     <Version>0.9.4</Version>
-    <AssemblyVersion>0.9.4.0</AssemblyVersion>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <FileVersion>0.9.4.0</FileVersion>
-    <DebugType>Full</DebugType>
+    <RootNamespace>Bit0.Utils.Common</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
   </ItemGroup>
-
-  <!--Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
-  </Target-->
 
 </Project>

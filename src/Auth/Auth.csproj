@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../CommonProps.csproj" />
+  
+  <PropertyGroup>
+    <AssemblyTitle>Auth utils</AssemblyTitle>	
+    <Version>0.0.1</Version>
+    <RootNamespace>Bit0.Utils.Auth</RootNamespace>
+  </PropertyGroup>
+  
+</Project>

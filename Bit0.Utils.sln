@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7E632BD2-F8D4-4A1A-A4B5-BBF65CD25674}"
 EndProject
@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		.travis.yml = .travis.yml
 		build.cmd = build.cmd
+		CommonProps.csproj = CommonProps.csproj
 		cover.cmd = cover.cmd
 		global.json = global.json
 		LICENSE.md = LICENSE.md
@@ -43,6 +44,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security.JwtWrapper", "src\Security.JwtWrapper\Security.JwtWrapper.csproj", "{6E04745B-5813-45C8-A4BC-11CC0151C139}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "tests\Tests\Tests.csproj", "{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth", "src\Auth\Auth.csproj", "{7523E409-A9BF-4F1B-9ED2-8A4579721CF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Models", "src\Auth.Models\Auth.Models.csproj", "{4192F830-14CD-4FBA-AA56-F5424845760A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,6 +99,14 @@ Global
 		{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7523E409-A9BF-4F1B-9ED2-8A4579721CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7523E409-A9BF-4F1B-9ED2-8A4579721CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7523E409-A9BF-4F1B-9ED2-8A4579721CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7523E409-A9BF-4F1B-9ED2-8A4579721CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4192F830-14CD-4FBA-AA56-F5424845760A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4192F830-14CD-4FBA-AA56-F5424845760A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4192F830-14CD-4FBA-AA56-F5424845760A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4192F830-14CD-4FBA-AA56-F5424845760A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +123,8 @@ Global
 		{E3201A1B-B279-4FED-B974-45DFCF4C54AF} = {7E632BD2-F8D4-4A1A-A4B5-BBF65CD25674}
 		{6E04745B-5813-45C8-A4BC-11CC0151C139} = {7E632BD2-F8D4-4A1A-A4B5-BBF65CD25674}
 		{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34} = {DF8CAB3F-0A32-4168-B16A-D7CED304C756}
+		{7523E409-A9BF-4F1B-9ED2-8A4579721CF6} = {7E632BD2-F8D4-4A1A-A4B5-BBF65CD25674}
+		{4192F830-14CD-4FBA-AA56-F5424845760A} = {7E632BD2-F8D4-4A1A-A4B5-BBF65CD25674}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9890F34E-769E-4F08-848E-F3DCE14F1DFE}
