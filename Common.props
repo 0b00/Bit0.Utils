@@ -30,6 +30,8 @@
     <PackageId>$(RootNamespace)</PackageId>
   </PropertyGroup>
 
+  <!--<Import Project="$(ProjectDir)\Version.props" Condition="exists('$(ProjectDir)\Version.props')"/>-->
+
   <!--Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
   </Target-->

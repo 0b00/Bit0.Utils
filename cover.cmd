@@ -4,8 +4,10 @@ SET dotnet="dotnet.exe"
 SET opencover="%USERPROFILE%\.nuget\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe"
 SET reportgenerator="%USERPROFILE%\.nuget\packages\ReportGenerator\3.0.0\tools\ReportGenerator.exe"
 SET coveralls="%USERPROFILE%\.nuget\packages\coveralls.net\0.7.0\tools\csmacnz.Coveralls.exe"
- 
-SET targetargs="test Generators.csproj" 
+
+SET taget="test.cmd"
+::SET targetargs="test Generators.csproj"
+SET targetargs=""
 SET filter="+[Bit0*]* -[xunit*]* -[Bit0.Utils.Tests*]*" 
 ::SET filter="+[*]InMemoryDatabaseAspNetCore.* -[.Model]* -[InMemory.Test]* -[.Startup]* -[.Test]* -[xunit.*]* -[FluentAssertions]* -[crypto]*" 
 
@@ -30,7 +32,7 @@ IF NOT EXIST %reportsdir% mkdir %reportsdir%
 REM Run code coverage analysis  
 ::%opencover% -mergeoutput -oldStyle -target:%dotnet% -output:%coveragefile% -targetargs:%targetargs% -filter:%filter% -targetdir:%cd%\tests\Generators\ -searchdirs:%cd%\tests\Generators\bin\Debug\netcoreapp1.1\
 ::-skipautoprops -hideskipped:All
-%opencover% "-target:%dotnet%" -targetargs:test -register:user -filter:%filter% -output:%coveragefile% -oldStyle -skipautoprops -returntargetcode -showunvisited -log:Error -skipautoprops
+%opencover% "-target:%taget%" -targetargs:%targetargs%  -register:user -filter:%filter% -output:%coveragefile% -oldStyle -skipautoprops -returntargetcode -showunvisited -log:Error -skipautoprops
  
 REM Generate the report  
 %reportgenerator% -targetdir:%reportdir% -reporttypes:%reporttypes% -reports:%coveragefile% -historydir:"%historydir%" -verbosity:Error
