@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
     <AssemblyTitle>Data</AssemblyTitle>
-    <Version>0.13.7</Version>
-    <AssemblyName>Bit0.Utils.Data</AssemblyName>
+    <RootNamespace>Bit0.Utils.Data</RootNamespace>
   </PropertyGroup>
+  <Import Project="../../Common.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />

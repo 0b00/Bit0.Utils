@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
     <AssemblyTitle>Data Repositories</AssemblyTitle>
-    <Version>0.9.4</Version>
     <RootNamespace>Bit0.Utils.Data.Repositories</RootNamespace>
   </PropertyGroup>
+  <Import Project="../../Common.props" />
 
   <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />

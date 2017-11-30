@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
     <AssemblyTitle>Common</AssemblyTitle>
-    <Version>0.9.4</Version>
     <RootNamespace>Bit0.Utils.Common</RootNamespace>
   </PropertyGroup>
+  <Import Project="../../Common.props" />
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />

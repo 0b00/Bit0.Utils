@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
-
   <PropertyGroup>
     <AssemblyTitle>JSend</AssemblyTitle>
-    <Version>1.2.1</Version>
     <RootNamespace>Bit0.Utils.JSend</RootNamespace>
   </PropertyGroup>
+  <Import Project="../../Common.props" />
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />

@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
-
   <PropertyGroup>
     <AssemblyTitle>Jwt Wrapper</AssemblyTitle>
-    <Version>0.4.1</Version>
     <RootNamespace>Bit0.Utils.Security.Jwt</RootNamespace>
   </PropertyGroup>
-  
+  <Import Project="../../Common.props" />
+
   <ItemGroup>
     <PackageReference Include="jose-jwt" Version="2.4.0" />
   </ItemGroup>

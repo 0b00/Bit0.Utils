@@ -1,10 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
     <AssemblyTitle>Generators</AssemblyTitle>
-    <Version>1.0.4</Version>
-    <RootNamespace>Bit0.Utils.</RootNamespace>
+    <RootNamespace>Bit0.Utils.Generators</RootNamespace>
   </PropertyGroup>
-  
+  <Import Project="../../Common.props" />
+
 </Project>

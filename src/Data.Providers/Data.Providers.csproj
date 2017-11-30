@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../CommonProps.csproj" />
 
   <PropertyGroup>
     <AssemblyTitle>Data Providers</AssemblyTitle>
-    <Version>0.9.9</Version>
     <RootNamespace>Bit0.Utils.Data.Providers</RootNamespace>
   </PropertyGroup>
+  <Import Project="../../Common.props" />
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.6\Bit0.Utils.Data.Providers.xml</DocumentationFile>
