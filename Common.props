@@ -18,16 +18,19 @@
     
     <DebugType>Full</DebugType>
 
-    <ProductName>$(AssemblyTitle)</ProductName>
-    <Description>$(AssemblyTitle) for .net core</Description>
-    <AssemblyTitle>$(Description)</AssemblyTitle>
-
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
 
     <Product>$(RootNamespace)</Product>
     <AssemblyName>$(RootNamespace)</AssemblyName>
     <PackageId>$(RootNamespace)</PackageId>
+    <AssemblyTitle>$(RootNamespace)</AssemblyTitle>
+
+
+    <AssemblyTitle Condition="'$(AssemblyTitle)'==''">$(RootNamespace)</AssemblyTitle>
+    <ProductName>$(AssemblyTitle)</ProductName>
+    <AssemblyTitle>$(AssemblyTitle) for .net core</AssemblyTitle>
+    <Description>$(AssemblyTitle)</Description>
   </PropertyGroup>
 
   <!--<Import Project="$(ProjectDir)\Version.props" Condition="exists('$(ProjectDir)\Version.props')"/>-->
