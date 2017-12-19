@@ -2,12 +2,12 @@
 
 SET dotnet="dotnet.exe" 
 SET opencover="%USERPROFILE%\.nuget\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe"
-SET reportgenerator="%USERPROFILE%\.nuget\packages\ReportGenerator\3.0.0\tools\ReportGenerator.exe"
+SET reportgenerator="%USERPROFILE%\.nuget\packages\ReportGenerator\3.1.0\tools\ReportGenerator.exe"
 SET coveralls="%USERPROFILE%\.nuget\packages\coveralls.net\0.7.0\tools\csmacnz.Coveralls.exe"
 
-SET taget="test.cmd"
+SET taget=%dotnet%
 ::SET targetargs="test Generators.csproj"
-SET targetargs=""
+SET targetargs="test .\tests\Tests\Tests.csproj -v m"
 SET filter="+[Bit0*]* -[xunit*]* -[Bit0.Utils.Tests*]*" 
 ::SET filter="+[*]InMemoryDatabaseAspNetCore.* -[.Model]* -[InMemory.Test]* -[.Startup]* -[.Test]* -[xunit.*]* -[FluentAssertions]* -[crypto]*" 
 
@@ -21,9 +21,9 @@ SET historyroot=%coverageroot%\History
 SET coveragedir=%historyroot%\Coverage
 SET historydir=%historyroot%\Report
 SET reportsdir=%coverageroot%\Reports
-SET reportdir=%reportsdir%\%datetime%
+SET reportdir="%reportsdir%\%datetime%"
 
-SET coveragefile=%coveragedir%\%datetime%.xml
+SET coveragefile="%coveragedir%\%datetime%.xml"
 
 IF NOT EXIST %coveragedir% mkdir %coveragedir%
 IF NOT EXIST %historydir% mkdir %historydir%
