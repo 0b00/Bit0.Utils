@@ -1,6 +1,5 @@
-using Bit0.Utils.Data.Reference;
-using Bit0.Utils.JSend.Http;
-using Bit0.Utils.JSend.Http.Converter;
+using Bit0.Utils.Data.Providers;
+using Bit0.Utils.Data.Repositories;
 using Bit0.Utils.JSend.Http.Exception;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Bit0.Utils.Tests.JSend.Http.TestSetup
+namespace Bit0.Utils.Tests.TestSetup
 {
     public class Startup2
     {
@@ -29,6 +28,9 @@ namespace Bit0.Utils.Tests.JSend.Http.TestSetup
                     opts.Filters.Add(new JSendExceptionFilter());
                 })
                 .AddJsonFormatters();
+
+            services.AddSingleton<IDataProvider, InMemoryDataProvider>();
+            services.AddSingleton(typeof(IDataRepository<>), typeof(DataRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

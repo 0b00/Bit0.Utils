@@ -4,17 +4,28 @@ using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 
-namespace Bit0.Utils.Tests.JSend.Http.TestSetup
+namespace Bit0.Utils.Tests.TestSetup
 {
-    public class ControllerTestBase<TStartup> where TStartup : class 
+    public class ControllerTestBase<TStartup> where TStartup : class
     {
-        protected HttpClient GetClient()
+        private TestServer _server;
+
+        protected TestServer GetServer()
         {
+            if (_server != null) return _server;
+
             var builder = new WebHostBuilder()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<TStartup>()
                 .UseEnvironment("Testing");
-            var server = new TestServer(builder);
+            _server = new TestServer(builder);
+
+            return _server;
+        }
+
+        protected HttpClient GetClient()
+        {
+            var server = GetServer();
             var client = server.CreateClient();
 
             // client always expects json results

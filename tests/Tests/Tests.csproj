@@ -9,20 +9,20 @@
 
   <ItemGroup>
     <PackageReference Include="coveralls.net" Version="0.7.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="1.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.0.1" />
     <PackageReference Include="Microsoft.CodeCoverage" Version="1.0.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="OpenCover" Version="4.6.519" />
-    <PackageReference Include="ReportGenerator" Version="3.0.0" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="ReportGenerator" Version="3.1.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Auth\Auth.csproj" />
     <ProjectReference Include="..\..\src\Common\Common.csproj" />
-    <ProjectReference Include="..\..\src\Data.Providers\Data.Providers.csproj" />
-    <ProjectReference Include="..\..\src\Data.Repositories\Data.Repositories.csproj" />
+    <ProjectReference Include="..\..\src\Data.Http\Data.Http.csproj" />
     <ProjectReference Include="..\..\src\Data\Data.csproj" />
     <ProjectReference Include="..\..\src\Generators\Generators.csproj" />
     <ProjectReference Include="..\..\src\Http\Http.csproj" />

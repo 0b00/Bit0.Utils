@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Bit0.Utils.Common.Exceptions;
 using Bit0.Utils.JSend.Http;
@@ -6,9 +7,9 @@ using Bit0.Utils.Tests.Data.Providers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bit0.Utils.Tests.JSend.Http.TestSetup
+namespace Bit0.Utils.Tests.TestSetup
 {
-    public class TestController : ControllerBase, IJSendController
+    public class Test1Controller : ControllerBase, IJSendController
     {
         [HttpGet]
         public User Action1()
@@ -41,7 +42,15 @@ namespace Bit0.Utils.Tests.JSend.Http.TestSetup
         [HttpGet]
         public async Task<User> Action5()
         {
-            await HttpResponseWritingExtensions.WriteAsync(Response, "Test");
+            await Response.WriteAsync("Test");
+
+            throw new Exception("response started");
+        }
+
+        [HttpGet]
+        public async Task<User> Action6()
+        {
+            await Response.WriteAsync("Test");
 
             throw new Exception("response started");
         }

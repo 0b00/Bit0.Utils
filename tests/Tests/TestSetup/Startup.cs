@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Bit0.Utils.Tests.JSend.Http.TestSetup
+namespace Bit0.Utils.Tests.TestSetup
 {
     public class Startup
     {

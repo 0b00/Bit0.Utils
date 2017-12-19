@@ -1,7 +1,7 @@
 using Bit0.Utils.Tests.Data.Providers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bit0.Utils.Tests.JSend.Http.TestSetup
+namespace Bit0.Utils.Tests.TestSetup
 {
     public class Test2Controller : ControllerBase
     {
