@@ -108,7 +108,7 @@ namespace Bit0.Utils.Tests.Data.Reference
         }
         
         [Fact]
-        public void Equals()
+        public void Equals1()
         {
             var guid = Guid.NewGuid();
             DataReference id = guid;

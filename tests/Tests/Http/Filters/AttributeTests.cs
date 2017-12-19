@@ -1,5 +1,6 @@
 ﻿using Bit0.Utils.Http.Filters;
 using System;
+using Bit0.Utils.Data.Http.Attributes;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Http.Filters
@@ -59,6 +60,17 @@ namespace Bit0.Utils.Tests.Http.Filters
         public void NotEmptyTest(Object value, Boolean expected)
         {
             var attr = new NotEmptyAttribute();
+            var actual = attr.IsValid(value);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(null, false, true)]
+        [InlineData(null, true, false)]
+        public void NullGuid(Object value, Boolean required,  Boolean expected)
+        {
+            var attr = new GuidAttribute(false, required: required);
             var actual = attr.IsValid(value);
 
             Assert.Equal(expected, actual);

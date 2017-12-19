@@ -1,13 +1,13 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using Bit0.Utils.Common.Extensions;
+﻿using Bit0.Utils.Common.Extensions;
 using Bit0.Utils.JSend.Common;
 using Bit0.Utils.JSend.Responses;
 using Bit0.Utils.Tests.Data.Providers;
-using Bit0.Utils.Tests.JSend.Http.TestSetup;
+using Bit0.Utils.Tests.TestSetup;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Net;
+using System.Net.Http;
 using Xunit;
 
 namespace Bit0.Utils.Tests.JSend.Http
@@ -24,7 +24,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         [Fact]
         public async void Test1()
         {
-            var resp = await _client.GetAsync("/test/action1");
+            var resp = await _client.GetAsync("/test1/action1");
             resp.EnsureSuccessStatusCode();
             var str = await resp.Content.ReadAsStringAsync();
 
@@ -43,7 +43,7 @@ namespace Bit0.Utils.Tests.JSend.Http
             var str = await resp.Content.ReadAsStringAsync();
 
             var success = JObject.Parse(str);
-            
+
             Assert.Equal("user1", success["username"]);
             Assert.Null(success["password"]);
         }
@@ -52,7 +52,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         public async void Test2()
         {
 
-            var resp = _client.GetAsync("/test/action2").Result;
+            var resp = _client.GetAsync("/test1/action2").Result;
             var str = await resp.Content.ReadAsStringAsync();
 
             var fail = JsonConvert.DeserializeObject<JSendResponse>(str);
@@ -67,7 +67,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         public async void Test3()
         {
 
-            var resp = _client.GetAsync("/test/action3").Result;
+            var resp = _client.GetAsync("/test1/action3").Result;
             var str = await resp.Content.ReadAsStringAsync();
 
             var error = JsonConvert.DeserializeObject<JSendResponse>(str);
@@ -82,7 +82,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         public async void Test4()
         {
 
-            var resp = _client.GetAsync("/test/action4").Result;
+            var resp = _client.GetAsync("/test1/action4").Result;
             var str = await resp.Content.ReadAsStringAsync();
 
             var error = JsonConvert.DeserializeObject<JSendResponse>(str);
@@ -98,7 +98,17 @@ namespace Bit0.Utils.Tests.JSend.Http
         {
             Assert.Throws<AggregateException>(() =>
             {
-                var resp = _client.GetAsync("/test/action5").Result;
+                var resp = _client.GetAsync("/test1/action5").Result;
+            });
+        }
+
+        [Fact]
+        public void Test6()
+        {
+            Assert.Throws<AggregateException>(() =>
+            {
+                _client.MaxResponseContentBufferSize = 1;
+                var resp = _client.GetAsync("/test1/action6").Result;
             });
         }
     }

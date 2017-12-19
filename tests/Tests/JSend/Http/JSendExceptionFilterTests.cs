@@ -1,12 +1,6 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using Bit0.Utils.Common.Extensions;
-using Bit0.Utils.JSend.Common;
-using Bit0.Utils.JSend.Responses;
-using Bit0.Utils.Tests.JSend.Http.TestSetup;
-using Newtonsoft.Json;
+﻿using Bit0.Utils.Tests.TestSetup;
 using Newtonsoft.Json.Linq;
+using System.Net.Http;
 using Xunit;
 
 namespace Bit0.Utils.Tests.JSend.Http
@@ -25,7 +19,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         public async void Test2()
         {
 
-            var resp = _client.GetAsync("/test/action2").Result;
+            var resp = _client.GetAsync("/test1/action2").Result;
             var str = await resp.Content.ReadAsStringAsync();
 
             var error = JObject.Parse(str);
@@ -39,7 +33,7 @@ namespace Bit0.Utils.Tests.JSend.Http
         public async void Test4()
         {
 
-            var resp = _client.GetAsync("/test/action4").Result;
+            var resp = _client.GetAsync("/test1/action4").Result;
             var str = await resp.Content.ReadAsStringAsync();
 
             var error = JObject.Parse(str);
