@@ -40,15 +40,15 @@ namespace Bit0.Utils.JSend.Http.Exception
             catch (System.Exception ex)
             {
                 _logger.LogError(0, ex, "An unhandled exception has occurred while executing the request.");
-
-                if (context.Response.HasStarted)
-                {
-                    _logger.LogWarning("The response has already started, the error page middleware will not be executed.");
-                    throw;
-                }
-
+                
                 try
                 {
+                    if (context.Response.HasStarted)
+                    {
+                        _logger.LogWarning("The response has already started, the error page middleware will not be executed.");
+                        throw;
+                    }
+
                     context.Response.Clear();
 
                     DisplayException(context, ex);

@@ -10,8 +10,4 @@
     <Exec Command="$(SolutionDir)\nuget.bat $(ProjectDir) $(Configuration)" />
   </Target>-->
 
-  <ItemGroup>
-    <ProjectReference Include="..\Data.Providers\Data.Providers.csproj" />
-  </ItemGroup>
-
 </Project>

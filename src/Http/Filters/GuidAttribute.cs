@@ -36,7 +36,10 @@ namespace Bit0.Utils.Http.Filters
         public override Boolean IsValid(Object value)
         {
 
-            if (value == null) return !_required;
+            if (value == null)
+            {
+                return !_required;
+            }
 
             return !_hasList
                 ? Guid.TryParse(value.ToString(), out Guid guid)

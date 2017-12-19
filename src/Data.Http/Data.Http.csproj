@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <AssemblyTitle>Data Http</AssemblyTitle>	
+    <RootNamespace>Bit0.Utils.Data.Http</RootNamespace>
+  </PropertyGroup>
+  <Import Project="../../Common.props" />
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+  
+</Project>
