@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  
-  <PropertyGroup>
-    <AssemblyTitle>Auth models</AssemblyTitle>
-    <RootNamespace>Bit0.Utils.Auth.Models</RootNamespace>
-  </PropertyGroup>
-  <Import Project="../../Common.props" />  
-
-</Project>
