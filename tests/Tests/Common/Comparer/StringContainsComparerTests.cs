@@ -19,7 +19,7 @@ namespace Bit0.Utils.Tests.Common.Comparer
         }
 
         [Fact]
-        public void Equals()
+        public void Equals1()
         {
             Assert.True(_comparer.Equals(_str1, "Test"));
             Assert.False(_comparer.Equals(_str1, _str2));
