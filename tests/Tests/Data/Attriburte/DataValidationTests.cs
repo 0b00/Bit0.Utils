@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Text;
 using Bit0.Utils.Data;
 using Bit0.Utils.Data.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Data.Attriburte
@@ -48,6 +49,19 @@ namespace Bit0.Utils.Tests.Data.Attriburte
             repository?.Save(new Test3Controller.DataModel{ Id = id });
 
             var context = new ValidationContext(id ?? "", services, null);
+            var dataValidation = new DataValidationTest();
+
+            var res = dataValidation.IsValidTest(id, context);
+
+            Assert.Equal(expected, res == ValidationResult.Success);
+        }
+
+        [Theory]
+        [InlineData(null, false)]
+        [InlineData("43b5709c-0603-45f3-bbb0-149e999576d0", false)]
+        public void Test3(String id, Boolean expected)
+        {
+            var context = new ValidationContext(id ?? "", null);
             var dataValidation = new DataValidationTest();
 
             var res = dataValidation.IsValidTest(id, context);
