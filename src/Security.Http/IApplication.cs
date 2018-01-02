@@ -1,8 +1,8 @@
 ﻿using System;
 using Bit0.Utils.Data;
-using Bit0.Utils.Security.Auth.Enums;
+using Bit0.Utils.Security.Http.Enums;
 
-namespace Bit0.Utils.Security.Auth
+namespace Bit0.Utils.Security.Http
 {
     /// <inheritdoc />
     /// <summary>

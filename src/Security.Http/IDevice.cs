@@ -2,32 +2,32 @@
 using Bit0.Utils.Data;
 using Bit0.Utils.Data.Http.Attributes;
 
-namespace Bit0.Utils.Security.Auth.Requests
+namespace Bit0.Utils.Security.Http
 {
     /// <inheritdoc />
     /// <summary>
-    /// Device registration request
+    /// Device interface
     /// </summary>
-    public interface IDeviceRegister : IMapper<IDevice>
+    public interface IDevice : IData
     {
         /// <summary>
-        /// Application Id (json: appId). 
+        /// Aplication Id.
         /// <remarks>Use <see cref="DataValidation"/></remarks>
         /// </summary>
-        String ApplicationId { get; set; }
+        String ApplcationId { get; set; }
 
         /// <summary>
-        /// Platform
+        /// Platform (Android, iOS, etc)
         /// </summary>
         String Platform { get; set; }
 
         /// <summary>
-        /// Platfrom version
+        /// Platform version (7.0.1, 8.0.0, etc)
         /// </summary>
         String PlatformVersion { get; set; }
 
         /// <summary>
-        /// Hardware Id
+        /// Harsware Id
         /// </summary>
         String HardwareId { get; set; }
     }

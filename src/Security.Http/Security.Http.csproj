@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
-    <AssemblyTitle>Auth</AssemblyTitle>	
-    <RootNamespace>Bit0.Utils.Security.Auth</RootNamespace>	
+    <AssemblyTitle>Security.Http</AssemblyTitle>	
+    <RootNamespace>Bit0.Utils.Security.Http</RootNamespace>
   </PropertyGroup>
   <Import Project="../../Common.props" />
   <ItemGroup>
