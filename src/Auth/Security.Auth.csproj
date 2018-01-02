@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <AssemblyTitle>Auth</AssemblyTitle>	
-    <RootNamespace>Bit0.Utils.Auth</RootNamespace>
+    <RootNamespace>Bit0.Utils.Security.Auth</RootNamespace>	
   </PropertyGroup>
   <Import Project="../../Common.props" />
   <ItemGroup>

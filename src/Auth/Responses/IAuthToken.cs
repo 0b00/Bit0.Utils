@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bit0.Utils.Auth.Responses
+namespace Bit0.Utils.Security.Auth.Responses
 {
     /// <summary>
     /// Authentication token

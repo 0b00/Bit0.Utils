@@ -1,4 +1,4 @@
-﻿namespace Bit0.Utils.Auth.Enums
+﻿namespace Bit0.Utils.Security.Auth.Enums
 {
     /// <summary>
     /// Application Platforn

@@ -1,6 +1,6 @@
 ﻿using Bit0.Utils.Common.Attributes;
 
-namespace Bit0.Utils.Auth.Enums
+namespace Bit0.Utils.Security.Auth.Enums
 {
     /// <summary>
     /// Role actions

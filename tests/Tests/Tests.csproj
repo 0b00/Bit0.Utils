@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Auth\Auth.csproj" />
+    <ProjectReference Include="..\..\src\Auth\Security.Auth.csproj" />
     <ProjectReference Include="..\..\src\Common\Common.csproj" />
     <ProjectReference Include="..\..\src\Data.Http\Data.Http.csproj" />
     <ProjectReference Include="..\..\src\Data\Data.csproj" />

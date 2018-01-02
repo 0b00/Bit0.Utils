@@ -2,7 +2,7 @@
 using Bit0.Utils.Data;
 using Bit0.Utils.Data.Http.Attributes;
 
-namespace Bit0.Utils.Auth.Requests
+namespace Bit0.Utils.Security.Auth.Requests
 {
     /// <inheritdoc />
     /// <summary>

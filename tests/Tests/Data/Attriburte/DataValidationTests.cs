@@ -1,4 +1,6 @@
-﻿using Bit0.Utils.Data.Http.Attributes;
+﻿using Bit0.Utils.Data;
+using Bit0.Utils.Data.Http.Attributes;
+using Bit0.Utils.Data.Repositories;
 using Bit0.Utils.Tests.TestSetup;
 using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
@@ -7,9 +9,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using Bit0.Utils.Data;
-using Bit0.Utils.Data.Repositories;
-using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Data.Attriburte
@@ -46,7 +45,7 @@ namespace Bit0.Utils.Tests.Data.Attriburte
             var services = _server.Host.Services;
             var repository = services.GetService(typeof(IDataRepository<IData>)) as IDataRepository<IData>;
 
-            repository?.Save(new Test3Controller.DataModel{ Id = id });
+            repository?.Save(new Test3Controller.DataModel { Id = id });
 
             var context = new ValidationContext(id ?? "", services, null);
             var dataValidation = new DataValidationTest();
