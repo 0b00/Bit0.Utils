@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Auth\Security.Auth.csproj" />
     <ProjectReference Include="..\..\src\Common\Common.csproj" />
     <ProjectReference Include="..\..\src\Data.Http\Data.Http.csproj" />
     <ProjectReference Include="..\..\src\Data\Data.csproj" />
@@ -28,6 +27,7 @@
     <ProjectReference Include="..\..\src\Http\Http.csproj" />
     <ProjectReference Include="..\..\src\JSend.Http\JSend.Http.csproj" />
     <ProjectReference Include="..\..\src\JSend\JSend.csproj" />
+    <ProjectReference Include="..\..\src\Security.Http\Security.Http.csproj" />
     <ProjectReference Include="..\..\src\Security.JwtWrapper\Security.JwtWrapper.csproj" />
     <ProjectReference Include="..\..\src\Security\Security.csproj" />
   </ItemGroup>

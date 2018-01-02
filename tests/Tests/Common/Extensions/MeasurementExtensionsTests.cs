@@ -1,5 +1,6 @@
 ﻿using Bit0.Utils.Common;
 using Bit0.Utils.Common.Extensions;
+using System;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Common.Extensions
@@ -45,61 +46,64 @@ namespace Bit0.Utils.Tests.Common.Extensions
             Assert.Equal(MeasurementUnit.Meter, m.Unit);
         }
 
-        [Fact]
-        public void ShortNameValueTest()
+        [Theory]
+        [InlineData("l", MeasurementUnit.Liter)]
+        [InlineData("dl", MeasurementUnit.DeciLiter)]
+        [InlineData("cl", MeasurementUnit.CentiLiter)]
+        [InlineData("ml", MeasurementUnit.MiliLiter)]
+        [InlineData("kg", MeasurementUnit.KiloGram)]
+        [InlineData("hg", MeasurementUnit.HactoGram)]
+        [InlineData("g", MeasurementUnit.Gram)]
+        [InlineData("m", MeasurementUnit.Meter)]
+        [InlineData("km", MeasurementUnit.KiloMeter)]
+        [InlineData("dm", MeasurementUnit.DeciMeter)]
+        [InlineData("cm", MeasurementUnit.CentiMeter)]
+        [InlineData("mm", MeasurementUnit.MiliMeter)]
+        [InlineData("pcs", MeasurementUnit.Piece)]
+        [InlineData("boxes", MeasurementUnit.Boxes)]
+        public void ShortNameValueTest(String expected, MeasurementUnit unit)
         {
-            Assert.Equal("l", MeasurementUnit.Liter.GetShortname());
-            Assert.Equal("dl", MeasurementUnit.DeciLiter.GetShortname());
-            Assert.Equal("cl", MeasurementUnit.CentiLiter.GetShortname());
-            Assert.Equal("ml", MeasurementUnit.MiliLiter.GetShortname());
-            Assert.Equal("kg", MeasurementUnit.KiloGram.GetShortname());
-            Assert.Equal("hg", MeasurementUnit.HactoGram.GetShortname());
-            Assert.Equal("g", MeasurementUnit.Gram.GetShortname());
-            Assert.Equal("m", MeasurementUnit.Meter.GetShortname());
-            Assert.Equal("km", MeasurementUnit.KiloMeter.GetShortname());
-            Assert.Equal("dm", MeasurementUnit.DeciMeter.GetShortname());
-            Assert.Equal("cm", MeasurementUnit.CentiMeter.GetShortname());
-            Assert.Equal("mm", MeasurementUnit.MiliMeter.GetShortname());
-            Assert.Equal("pcs", MeasurementUnit.Piece.GetShortname());
-            Assert.Equal("boxes", MeasurementUnit.Boxes.GetShortname());
+            Assert.Equal(expected, unit.GetShortname());
         }
 
-        [Fact]
-        public void AttributeConversionFactor()
+        [Theory]
+        [InlineData(1d, MeasurementUnit.Liter)]
+        [InlineData(1d / 10, MeasurementUnit.DeciLiter)]
+        [InlineData(1d / 100, MeasurementUnit.CentiLiter)]
+        [InlineData(1d / 1000, MeasurementUnit.MiliLiter)]
+        [InlineData(1d, MeasurementUnit.KiloGram)]
+        [InlineData(1d / 10, MeasurementUnit.HactoGram)]
+        [InlineData(1d / 1000, MeasurementUnit.Gram)]
+        [InlineData(1d, MeasurementUnit.Meter)]
+        [InlineData(1000d, MeasurementUnit.KiloMeter)]
+        [InlineData(1d / 10, MeasurementUnit.DeciMeter)]
+        [InlineData(1d / 100, MeasurementUnit.CentiMeter)]
+        [InlineData(1d / 1000, MeasurementUnit.MiliMeter)]
+        [InlineData(1d, MeasurementUnit.Piece)]
+        [InlineData(1d, MeasurementUnit.Boxes)]
+        public void AttributeConversionFactor(Double expected, MeasurementUnit unit)
         {
-            Assert.Equal(1d, MeasurementUnit.Liter.GetConversionFactor());
-            Assert.Equal(1d / 10, MeasurementUnit.DeciLiter.GetConversionFactor());
-            Assert.Equal(1d / 100, MeasurementUnit.CentiLiter.GetConversionFactor());
-            Assert.Equal(1d / 1000, MeasurementUnit.MiliLiter.GetConversionFactor());
-            Assert.Equal(1d, MeasurementUnit.KiloGram.GetConversionFactor());
-            Assert.Equal(1d / 10, MeasurementUnit.HactoGram.GetConversionFactor());
-            Assert.Equal(1d / 1000, MeasurementUnit.Gram.GetConversionFactor());
-            Assert.Equal(1d, MeasurementUnit.Meter.GetConversionFactor());
-            Assert.Equal(1000d, MeasurementUnit.KiloMeter.GetConversionFactor());
-            Assert.Equal(1d / 10, MeasurementUnit.DeciMeter.GetConversionFactor());
-            Assert.Equal(1d / 100, MeasurementUnit.CentiMeter.GetConversionFactor());
-            Assert.Equal(1d / 1000, MeasurementUnit.MiliMeter.GetConversionFactor());
-            Assert.Equal(1d, MeasurementUnit.Piece.GetConversionFactor());
-            Assert.Equal(1d, MeasurementUnit.Boxes.GetConversionFactor());
+            Assert.Equal(expected, unit.GetConversionFactor());
         }
 
-        [Fact]
-        public void AttributeBaseUnit()
+        [Theory]
+        [InlineData(MeasurementUnit.None, MeasurementUnit.Liter)]
+        [InlineData(MeasurementUnit.Liter, MeasurementUnit.DeciLiter)]
+        [InlineData(MeasurementUnit.Liter, MeasurementUnit.CentiLiter)]
+        [InlineData(MeasurementUnit.Liter, MeasurementUnit.MiliLiter)]
+        [InlineData(MeasurementUnit.None, MeasurementUnit.KiloGram)]
+        [InlineData(MeasurementUnit.KiloGram, MeasurementUnit.HactoGram)]
+        [InlineData(MeasurementUnit.KiloGram, MeasurementUnit.Gram)]
+        [InlineData(MeasurementUnit.None, MeasurementUnit.Meter)]
+        [InlineData(MeasurementUnit.Meter, MeasurementUnit.KiloMeter)]
+        [InlineData(MeasurementUnit.Meter, MeasurementUnit.DeciMeter)]
+        [InlineData(MeasurementUnit.Meter, MeasurementUnit.CentiMeter)]
+        [InlineData(MeasurementUnit.Meter, MeasurementUnit.MiliMeter)]
+        [InlineData(MeasurementUnit.None, MeasurementUnit.Piece)]
+        [InlineData(MeasurementUnit.None, MeasurementUnit.Boxes)]
+        public void AttributeBaseUnit(MeasurementUnit expected, MeasurementUnit unit)
         {
-            Assert.Equal(MeasurementUnit.None, MeasurementUnit.Liter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Liter, MeasurementUnit.DeciLiter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Liter, MeasurementUnit.CentiLiter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Liter, MeasurementUnit.MiliLiter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.None, MeasurementUnit.KiloGram.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.KiloGram, MeasurementUnit.HactoGram.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.KiloGram, MeasurementUnit.Gram.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.None, MeasurementUnit.Meter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Meter, MeasurementUnit.KiloMeter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Meter, MeasurementUnit.DeciMeter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Meter, MeasurementUnit.CentiMeter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.Meter, MeasurementUnit.MiliMeter.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.None, MeasurementUnit.Piece.GetBaseUnit());
-            Assert.Equal(MeasurementUnit.None, MeasurementUnit.Boxes.GetBaseUnit());
+            Assert.Equal(expected, unit.GetBaseUnit());
         }
     }
 }
