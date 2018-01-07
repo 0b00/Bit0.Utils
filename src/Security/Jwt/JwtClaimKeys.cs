@@ -8,29 +8,39 @@ namespace Bit0.Utils.Security.Jwt
     public static class JwtClaimKeys
     {
         /// <summary>
-        /// Claim key for audience
+        /// JWT audience
         /// </summary>
         public const String Audience = "aud";
 
         /// <summary>
-        /// Claim key for issuer
+        /// JWT issuer
         /// </summary>
         public const String Issuer = "iss";
 
 
         /// <summary>
-        /// Claim key for expiry
+        /// JWT expires at
         /// </summary>
         public const String Expiry = "exp";
 
         /// <summary>
-        /// Claim key for issued at
+        /// JWT issued at
         /// </summary>
         public const String IssuedAt = "iat";
 
         /// <summary>
-        /// Claim key for not before
+        /// Cannot use JWT before
         /// </summary>
         public const String NotBefore = "nbf";
+
+        /// <summary>
+        /// JWT subject (i.e. user)
+        /// </summary>
+        public const String Subject = "sub";
+
+        /// <summary>
+        /// JWT scope (i.e. rights)
+        /// </summary>
+        public const String Scope = "scp";
     }
 }
