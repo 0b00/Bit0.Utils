@@ -34,7 +34,7 @@ namespace Bit0.Utils.Tests.Security.Jwt
             var payload = new Jwt1(notBeforeSeconds: notBeforeSeconds).Claims;
             var jwt = JwtWrapper.Generate(payload, _jwtKey);
 
-            JwtWrapper.Validate(jwt, _jwtKey);
+            JwtWrapper.Parse(jwt, _jwtKey);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace Bit0.Utils.Tests.Security.Jwt
 
             Assert.Throws<IntegrityException>(() =>
             {
-                JwtWrapper.Validate(jwt, key);
+                JwtWrapper.Parse(jwt, key);
             });
         }
 

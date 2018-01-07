@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7E632BD2-F8D4-4A1A-A4B5-BBF65CD25674}"
 EndProject
@@ -36,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSend.Http", "src\JSend.Htt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "src\Security\Security.csproj", "{5A1A063C-FC20-485E-813E-B03C8215379E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security.JwtWrapper", "src\Security.JwtWrapper\Security.JwtWrapper.csproj", "{6E04745B-5813-45C8-A4BC-11CC0151C139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security.Jwt", "src\Security.Jwt\Security.Jwt.csproj", "{6E04745B-5813-45C8-A4BC-11CC0151C139}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "tests\Tests\Tests.csproj", "{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34}"
 EndProject

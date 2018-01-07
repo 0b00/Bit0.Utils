@@ -23,15 +23,20 @@ namespace Bit0.Utils.Security.Jwt
         /// <summary>
         /// Validate a Json Web Token
         /// </summary>
-        /// <param name="token"></param>
-        /// <param name="jwtKey"></param>
+        /// <param name="token">Token to parse</param>
+        /// <param name="jwtKey">JWT Key</param>
+        /// <param name="validate">Additional </param>
         /// <returns></returns>
-        public static IDictionary<String, Object> Validate(String token, IJwtKey jwtKey)
+        public static IDictionary<String, Object> Parse(String token, IJwtKey jwtKey, Boolean validate = true)
         {
-            var jwt = Jose.JWT.Decode<IDictionary<String, Object>>(token, jwtKey.Key);
-            jwt.ValidateDate(JwtClaimKeys.Expiry, "Access token has expired.");
-            jwt.ValidateDate(JwtClaimKeys.IssuedAt, "Invalid access token.");
-            jwt.ValidateDate(JwtClaimKeys.NotBefore, "Invalid access token, cannot use before {0}.");
+            var jwt = Jose.JWT.Decode<IDictionary<String, Object>>(token, validate ? jwtKey.Key : null);
+
+            if (validate)
+            {
+                jwt.ValidateDate(JwtClaimKeys.Expiry, "Access token has expired.");
+                jwt.ValidateDate(JwtClaimKeys.IssuedAt, "Invalid access token.");
+                jwt.ValidateDate(JwtClaimKeys.NotBefore, "Invalid access token, cannot use before {0}.");
+            }
 
             return jwt;
         }
