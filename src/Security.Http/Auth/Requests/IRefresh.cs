@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bit0.Utils.Security.Http.Requests
+namespace Bit0.Utils.Security.Http.Auth.Requests
 {
     /// <summary>
     /// Refresh token request

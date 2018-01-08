@@ -1,7 +1,7 @@
-﻿namespace Bit0.Utils.Security.Http.Enums
+﻿namespace Bit0.Utils.Security.Http.Auth
 {
     /// <summary>
-    /// Application Platforn
+    /// Application Platform
     /// </summary>
     public enum ApplicationPlatformType
     {

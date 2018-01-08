@@ -1,7 +1,7 @@
 ﻿using System;
 using Bit0.Utils.Data.Http.Attributes;
 
-namespace Bit0.Utils.Security.Http.Requests
+namespace Bit0.Utils.Security.Http.Auth.Requests
 {
     /// <summary>
     /// Login request
