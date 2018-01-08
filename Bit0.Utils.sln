@@ -36,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSend.Http", "src\JSend.Htt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "src\Security\Security.csproj", "{5A1A063C-FC20-485E-813E-B03C8215379E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security.Jwt", "src\Security.Jwt\Security.Jwt.csproj", "{6E04745B-5813-45C8-A4BC-11CC0151C139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security.JoseJwtWrapper", "src\Security.JoseJwtWrapper\Security.JoseJwtWrapper.csproj", "{6E04745B-5813-45C8-A4BC-11CC0151C139}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "tests\Tests\Tests.csproj", "{73A737B0-DA0D-47B9-BA6D-F6164A3FFF34}"
 EndProject

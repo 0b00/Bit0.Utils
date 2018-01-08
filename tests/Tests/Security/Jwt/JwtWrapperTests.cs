@@ -1,9 +1,8 @@
-﻿using Bit0.Utils.Common.Exceptions;
-using Bit0.Utils.Security.Jwt;
+﻿using Bit0.Utils.Security.Jwt;
+using Jose;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Jose;
 using Xunit;
 
 namespace Bit0.Utils.Tests.Security.Jwt

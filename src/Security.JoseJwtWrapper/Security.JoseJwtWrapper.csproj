@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyTitle>Jwt Wrapper</AssemblyTitle>
-    <RootNamespace>Bit0.Utils.Security.Jwt</RootNamespace>
+    <RootNamespace>Bit0.Utils.Security.JoseJwtWrapper</RootNamespace>
   </PropertyGroup>
   <Import Project="../../Common.props" />
 

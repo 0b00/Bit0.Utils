@@ -28,7 +28,7 @@
     <ProjectReference Include="..\..\src\JSend.Http\JSend.Http.csproj" />
     <ProjectReference Include="..\..\src\JSend\JSend.csproj" />
     <ProjectReference Include="..\..\src\Security.Http\Security.Http.csproj" />
-    <ProjectReference Include="..\..\src\Security.Jwt\Security.JwtWrapper.csproj" />
+    <ProjectReference Include="..\..\src\Security.JoseJwtWrapper\Security.JoseJwtWrapper.csproj" />
     <ProjectReference Include="..\..\src\Security\Security.csproj" />
   </ItemGroup>
 
