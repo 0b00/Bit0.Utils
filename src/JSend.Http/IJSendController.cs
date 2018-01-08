@@ -1,7 +1,7 @@
-﻿using Bit0.Utils.Data;
-using System;
+﻿using System;
+using Bit0.Utils.Data;
 
-namespace Bit0.Utils.Http.Controllers
+namespace Bit0.Utils.JSend.Http
 {
     /// <summary>
     /// Interface for JSend controller

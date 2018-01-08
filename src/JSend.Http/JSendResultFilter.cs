@@ -1,5 +1,4 @@
-﻿using Bit0.Utils.Http.Controllers;
-using Bit0.Utils.JSend.Responses;
+﻿using Bit0.Utils.JSend.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 

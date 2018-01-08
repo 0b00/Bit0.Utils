@@ -3,7 +3,7 @@ using Bit0.Utils.Common.Extensions;
 using Bit0.Utils.Security.Http.Auth;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
-using Bit0.Utils.Http.Controllers;
+using Bit0.Utils.JSend.Http;
 using Bit0.Utils.Security.Http.Auth.Requests;
 
 namespace Bit0.Utils.Security.Http.Attributes
