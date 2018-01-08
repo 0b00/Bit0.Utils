@@ -3,7 +3,6 @@ Small utilites for .net core
 
 ## Utilities
 
-- [Auth](/src/Auth) (Bit0.Utils.Auth)
 - [Common](/src/Common) (Bit0.Utils.Common)
 - [Data](/src/Data) (Bit0.Utils.Data)
   - [Http](/src/Data.Http) (Bit0.Utils.Data.Http)
@@ -12,7 +11,8 @@ Small utilites for .net core
 - [JSend](/src/JSend) (Bit0.Utils.JSend)
   - [Http](/src/JSend.Http) (Bit0.Utils.JSend.Http)
 - [Security](/src/Security) (Bit0.Utils.Security)
-  - [JwtWrapper](/src/Security.JwtWrapper) (Bit0.Utils.Security.JwtWrapper)
+  - [Http](/src/Security.Http) (Bit0.Utils.Security.Http)
+  - [Jose-Jwt Wrapper](/src/Security.Wrapper.JoseJwt) (Bit0.Utils.Security.Wrapper.JoseJwt)
 	
 ## Installation
 [MyGet](https://www.myget.org/gallery/bit0)
