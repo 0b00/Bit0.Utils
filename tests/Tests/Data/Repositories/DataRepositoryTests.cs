@@ -162,7 +162,7 @@ namespace Bit0.Utils.Tests.Data.Repositories
             var id = user.Id;
             _repository.Delete(user);
 
-            Assert.Throws(typeof(KeyMissingException), () =>
+            Assert.Throws<KeyMissingException>(() =>
             {
                 var rUser = _repository.GetById<User>(id);
                 Assert.Null(rUser);
@@ -184,7 +184,7 @@ namespace Bit0.Utils.Tests.Data.Repositories
             var id = user.Id;
             _repository.Delete(id);
 
-            Assert.Throws(typeof(KeyMissingException), () =>
+            Assert.Throws<KeyMissingException>(() =>
             {
                 var rUser = _repository.GetById(id);
                 Assert.Null(rUser);

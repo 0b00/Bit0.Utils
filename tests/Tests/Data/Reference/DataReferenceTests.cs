@@ -48,7 +48,6 @@ namespace Bit0.Utils.Tests.Data.Reference
         {
             var id = DataReference.NewIdentity();
             Assert.NotNull(id);
-            Assert.NotNull(id.Id);
             Assert.Equal(id.Id, id);
 
             String str = id;

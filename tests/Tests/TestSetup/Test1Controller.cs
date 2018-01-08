@@ -1,11 +1,10 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using Bit0.Utils.Common.Exceptions;
-using Bit0.Utils.JSend.Http;
+using Bit0.Utils.Http.Controllers;
 using Bit0.Utils.Tests.Data.Providers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace Bit0.Utils.Tests.TestSetup
 {
@@ -54,5 +53,7 @@ namespace Bit0.Utils.Tests.TestSetup
 
             throw new Exception("response started");
         }
+
+        public Type DataType { get; }
     }
 }

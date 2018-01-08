@@ -27,7 +27,7 @@ namespace Bit0.Utils.Tests.Data.Providers
 
             var data = ex.List<IData>(x => true);
 
-            Assert.Equal(0, data.Count());
+            Assert.Empty(data);
         }
 
         [Fact]
@@ -168,7 +168,7 @@ namespace Bit0.Utils.Tests.Data.Providers
             var id3 = _dataProvider.Add(user3);
             _dataProvider.Remove<IData>(id3);
 
-            Assert.Throws(typeof(KeyMissingException), () =>
+            Assert.Throws<KeyMissingException>(() =>
             {
                 var rUser3 = _dataProvider.Entry<User>(id3);
                 Assert.Null(rUser3);
@@ -178,7 +178,7 @@ namespace Bit0.Utils.Tests.Data.Providers
             var rUser4 = _dataProvider.Entry<User>(id4);
             _dataProvider.Remove(rUser4);
 
-            Assert.Throws(typeof(KeyMissingException), () =>
+            Assert.Throws<KeyMissingException>(() =>
             {
                 rUser4 = _dataProvider.Entry<User>(id4);
             });
@@ -219,7 +219,7 @@ namespace Bit0.Utils.Tests.Data.Providers
 
             Assert.NotNull(rid);
             Assert.False(DataReference.IsEmptyOrNull(rid));
-            Assert.Equal<String>(id, rid);
+            Assert.Equal(id, rid);
         }
 
         private class InMemoryDataProviderEx : InMemoryDataProvider

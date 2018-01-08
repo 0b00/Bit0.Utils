@@ -32,18 +32,18 @@ namespace Bit0.Utils.Tests.JSend.Responses
             Assert.Equal(str, error2.Message);
             Assert.Equal(status, error2.StatusCode.Code);
             Assert.Equal(innerStatus, error2.StatusCode.InternalCode);
-            Assert.IsType(typeof(ArgumentNullException), error2.Exception);
+            Assert.IsType<ArgumentNullException>(error2.Exception);
             Assert.Null(error2.StackTrace);
 
             Assert.Equal(str, error3.Message);
             Assert.Equal(500, error3.StatusCode.Code);
             Assert.Equal(innerStatus, error3.StatusCode.InternalCode);
-            Assert.IsType(typeof(ArgumentNullException), error3.Exception);
+            Assert.IsType<ArgumentNullException>(error3.Exception);
 
             Assert.Equal(str, error4.Message);
             Assert.Equal(500, error4.StatusCode.Code);
             Assert.Equal(500, error4.StatusCode.InternalCode);
-            Assert.IsType(typeof(ArgumentNullException), error4.Exception);
+            Assert.IsType<ArgumentNullException>(error4.Exception);
         }
 
         [Fact]
