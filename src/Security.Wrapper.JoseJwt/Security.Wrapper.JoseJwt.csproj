@@ -1,16 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyTitle>Jwt Wrapper</AssemblyTitle>
-    <RootNamespace>Bit0.Utils.Security.JoseJwtWrapper</RootNamespace>
+    <AssemblyTitle>Jose-Jwt Wrapper</AssemblyTitle>
+    <RootNamespace>Bit0.Utils.Security.Jwt</RootNamespace>
+    <Product>Bit0.Utils.Security.Wrapper.JoseJwt</Product>
   </PropertyGroup>
   <Import Project="../../Common.props" />
-
   <ItemGroup>
     <PackageReference Include="jose-jwt" Version="2.4.0" />
   </ItemGroup>
-  
   <ItemGroup>
     <ProjectReference Include="..\Security\Security.csproj" />
   </ItemGroup>
-
 </Project>
