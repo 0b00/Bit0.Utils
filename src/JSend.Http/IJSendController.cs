@@ -1,9 +1,16 @@
-﻿namespace Bit0.Utils.JSend.Http
+﻿using Bit0.Utils.Data;
+using System;
+
+namespace Bit0.Utils.Http.Controllers
 {
     /// <summary>
-    /// JSend controller interface
+    /// Interface for JSend controller
     /// </summary>
     public interface IJSendController
     {
+        /// <summary>
+        /// <see cref="IData"/> type for controller
+        /// </summary>
+        Type DataType { get; }
     }
 }
